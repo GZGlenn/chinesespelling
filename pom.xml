@@ -22,11 +22,25 @@
     </build>
 
     <dependencies>
+
+        <!--<dependency>-->
+            <!--<groupId>tw.edu.ntu.csie</groupId>-->
+            <!--<artifactId>libsvm</artifactId>-->
+            <!--<version>3.17</version>-->
+        <!--</dependency>-->
+
         <!-- https://mvnrepository.com/artifact/net.sf.json-lib/json-lib -->
         <dependency>
             <groupId>net.sf.json-lib</groupId>
             <artifactId>json-lib</artifactId>
             <version>2.4</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/nz.ac.waikato.cms.weka/LibSVM -->
+        <dependency>
+            <groupId>nz.ac.waikato.cms.weka</groupId>
+            <artifactId>LibSVM</artifactId>
+            <version>1.0.10</version>
         </dependency>
 
         <dependency>

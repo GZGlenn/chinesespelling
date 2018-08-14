@@ -3,8 +3,11 @@ package com.pr.nlp.method;
 import com.hankcs.hanlp.seg.common.Term;
 import com.hankcs.hanlp.tokenizer.StandardTokenizer;
 import com.pr.nlp.data.*;
+import com.pr.nlp.model.MSMOReg;
 import com.pr.nlp.util.FileUtil;
 import com.pr.nlp.util.LogUtil;
+import javafx.util.Pair;
+import weka.core.Instances;
 
 import java.io.*;
 import java.lang.reflect.Array;
@@ -24,6 +27,8 @@ public class BasicMethod {
     private String inputRoot = "";
     private String outputRoot = "";
     private String pattern = "";
+
+    private MSMOReg model;
 
 
     public BasicMethod(String inputRoot, String outputRoot) {
@@ -46,6 +51,14 @@ public class BasicMethod {
         }
     }
 
+    public void saveModel(String path) {
+        if (this.model != null) this.model.saveModel(path);
+    }
+
+    public void loadModel(String path) {
+        this.model.loadModel(path);
+    }
+
     public void train(String trainFile) {
 
         // read data
@@ -61,10 +74,12 @@ public class BasicMethod {
         ArrayList<SighanDataBean> candidate = createCandidate(trainData, lmModel, pmiModel);
 
         // get feature
+        ArrayList<Pair<FeatureData, Integer>> data = getFeature(candidate);
 
         // train model (is need correct)
-
-        // find best one
+        Instances instances = formatFeature(data);
+        this.model = new MSMOReg();
+        model.trainModel(instances);
 
     }
 
@@ -78,10 +93,10 @@ public class BasicMethod {
     }
 
     // create candidate by pmi and lm
-    private HashMap<String, ArrayList<SighanDataBean>> createCandidate(ArrayList<SighanDataBean> trainData,
+    private ArrayList<SighanDataBean> createCandidate(ArrayList<SighanDataBean> trainData,
                                                       HashMap<String, LMStatisticWordBean> lmModel,
                                                       HashMap<String, PMIWordPairBean> pmiModel) {
-        HashMap<String, ArrayList<SighanDataBean>> result = new HashMap<>();
+        ArrayList<SighanDataBean> result = new ArrayList<>();
         for (SighanDataBean sighanData: trainData) {
 
         }
@@ -89,9 +104,20 @@ public class BasicMethod {
         return result;
     }
 
+    private ArrayList<Pair<FeatureData, Integer>> getFeature(ArrayList<SighanDataBean> candidate) {
+        ArrayList<Pair<FeatureData, Integer>> data = new ArrayList<>();
+
+        return data;
+    }
+
+    private Instances formatFeature(ArrayList<Pair<FeatureData, Integer>> features) {
+        return null;
+    }
+
+
     private double calSetenceLMScore(String content, HashMap<String, LMStatisticWordBean> lmModel,
                                      HashMap<String, WordStatisticBean> unigramModel) {
-
+        return -1;
     }
 
     private boolean isNeedStatistic() {
