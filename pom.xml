@@ -69,6 +69,11 @@
             <version>portable-1.3.4.5</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.hankcs</groupId>
+            <artifactId>hanlp</artifactId>
+            <version>portable-1.6.2</version>
+        </dependency>
     </dependencies>
 
 
