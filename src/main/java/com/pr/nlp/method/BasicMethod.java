@@ -7,6 +7,7 @@ import com.pr.nlp.model.MSMOReg;
 import com.pr.nlp.util.FileUtil;
 import com.pr.nlp.util.LogUtil;
 import javafx.util.Pair;
+import org.apache.lucene.index.Term;
 import weka.core.Instances;
 
 import java.io.*;
