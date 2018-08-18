@@ -1,5 +1,6 @@
 package com.pr.nlp.method;
 
+import com.hankcs.hanlp.HanLP;
 import com.hankcs.hanlp.seg.common.Term;
 import com.hankcs.hanlp.tokenizer.StandardTokenizer;
 import com.pr.nlp.data.*;
@@ -7,7 +8,14 @@ import com.pr.nlp.model.MSMOReg;
 import com.pr.nlp.util.FileUtil;
 import com.pr.nlp.util.LogUtil;
 import javafx.util.Pair;
+<<<<<<< HEAD
 import org.apache.lucene.index.Term;
+=======
+import jdk.internal.org.objectweb.asm.Handle;
+import weka.core.Attribute;
+import weka.core.DenseInstance;
+import weka.core.Instance;
+>>>>>>> eebc15bf074736e552c591467edecc2bf17841ae
 import weka.core.Instances;
 
 import java.io.*;
@@ -62,7 +70,7 @@ public class BasicMethod {
     public void train(String trainFile) {
 
         // read data
-        HashMap<String, SighanDataBean> trainData = readTrainData(trainFile);
+        ArrayList<SighanDataBean> trainData = readTrainData(trainFile);
 
         // load data
         HashMap<String, LMStatisticWordBean> lmModel = loadLMModel();
@@ -71,10 +79,11 @@ public class BasicMethod {
         HashMap<String, WordStatisticBean> wordModel = loadStatisticUnigram();
 
         // create more sample
-        HashMap<String, ArrayList<CandidateData>> candidate = createCandidate(trainData, lmModel, pmiModel);
+        createCandidate(trainData, lmModel, pmiModel);
 
         // get feature
-        HashMap<String, ArrayList<Pair<FeatureData, Integer>>> data = getFeature(candidate);
+        HashMap<String, ArrayList<FeatureData>> data = getFeature(trainData,
+                lmModel, pmiModel, wordModel);
 
         // train model (is need correct)
         Instances instances = formatFeature(data);
@@ -83,48 +92,86 @@ public class BasicMethod {
 
     }
 
-    private HashMap<String, SighanDataBean> readTrainData(String path) {
+    private ArrayList<SighanDataBean> readTrainData(String path) {
         ArrayList<String> lines = FileUtil.getFiles(path);
-        HashMap<String, SighanDataBean> dataList = new HashMap<>();
+        ArrayList<SighanDataBean> dataList = new ArrayList<>();
         for (String line : lines) {
             SighanDataBean dataBean = SighanDataBean.parseData(line);
-            dataList.put(dataBean.getIdStr(), dataBean);
+            dataList.add(dataBean);
         }
         return dataList;
     }
 
     // create candidate by pmi and lm
-    private HashMap<String, ArrayList<CandidateData>> createCandidate(ArrayList<SighanDataBean> trainData,
+    private void createCandidate(ArrayList<SighanDataBean> trainData,
                                                       HashMap<String, LMStatisticWordBean> lmModel,
                                                       HashMap<String, PMIWordPairBean> pmiModel) {
-        HashMap<String, ArrayList<CandidateData>> result = new HashMap<>();
         for (SighanDataBean sighanData: trainData) {
+            List<Term> termList = HanLP.segment(sighanData.getContent());
+            for (Term term : termList) {
+                ArrayList<String> similarWord = getSimilarWord(term.word);
 
+            }
+
+            // basic choose
         }
-
-        return result;
     }
 
-    private HashMap<String, ArrayList<Pair<FeatureData, Integer>>> getFeature(HashMap<String, ArrayList<CandidateData>> candidate, HashMap<String, >) {
-        HashMap<String, ArrayList<Pair<FeatureData, Integer>>> data = new HashMap<>();
-        for (CandidateData sigData : candidate) {
+    private ArrayList<String> getSimilarWord(String word) {
+        return null;
+    }
+
+    private ArrayList<String> basicChoose()
+
+    private HashMap<String, ArrayList<FeatureData>> getFeature(ArrayList<SighanDataBean> candidates,
+                                                                              HashMap<String, LMStatisticWordBean> lmModel,
+                                                                              HashMap<String, PMIWordPairBean> pmiModel,
+                                                                              HashMap<String, WordStatisticBean> wordModel) {
+        HashMap<String, ArrayList<FeatureData>> data = new HashMap<>();
+        for (SighanDataBean candidate : candidates) {
+            ArrayList<FeatureData> featureList = new ArrayList<>();
+            for (ArrayList<ChangeData> changeData : candidate.getChangeList()) {
+                FeatureData feature = new FeatureData();
+                feature.calFeature(candidate.getContent(), candidate.getCorrectContent(), changeData, pmiModel, lmModel, wordModel);
+                featureList.add(feature);
+            }
+
+            ArrayList<ChangeData> gt = new ArrayList<>();
+            ChangeData cdata = new ChangeData(candidate.getLocation(), candidate.getLocation() + candidate.getErrorStr().length(), candidate.getCorrectStr());
+            gt.add(cdata);
+            FeatureData feature = new FeatureData();
+            feature.calFeature(candidate.getContent(), candidate.getCorrectContent(), gt, pmiModel, lmModel, wordModel);
+            featureList.add(feature);
+            data.put(candidate.getIdStr(), featureList);
         }
         return data;
     }
 
-    private Instances formatFeature(HashMap<String, ArrayList<Pair<FeatureData, Integer>>>  features) {
-        return null;
+    private Instances formatFeature(HashMap<String, ArrayList<FeatureData>> featureMap) {
+        ArrayList<Attribute> attributes = new ArrayList<>();
+        attributes.add(new Attribute("lmfeat"));
+        attributes.add(new Attribute("pmi"));
+        attributes.add(new Attribute("wordnum"));
+        attributes.add(new Attribute("label"));
+
+        Instances instances = new Instances("train_data",attributes,0);
+        instances.setClassIndex(instances.numAttributes() - 1);
+        for (HashMap.Entry<String, ArrayList<FeatureData>> entry : featureMap.entrySet()) {
+            for (FeatureData feature : entry.getValue()) {
+                Instance instance = new DenseInstance(instances.numAttributes());
+                instance.setValue(0, feature.getLmfeat());
+                instance.setValue(1, feature.getPmifeat());
+                instance.setValue(2, feature.getWordNum());
+                instance.setValue(3, feature.getLabel());
+                instances.add(instance);
+            }
+        }
+
+        return instances;
     }
 
 
-    private double calSetenceLMScore(String content, HashMap<String, LMStatisticWordBean> lmModel,
-                                     HashMap<String, WordStatisticBean> unigramModel) {
-        return -1;
-    }
 
-    private double calPMISScore(CandidateData data) {
-
-    }
 
     private boolean isNeedStatistic() {
         if (!FileUtil.bExistFile(outputRoot + staticUnigramName)) return true;

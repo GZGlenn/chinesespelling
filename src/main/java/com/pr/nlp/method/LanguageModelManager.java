@@ -6,6 +6,6 @@ public class LanguageModelManager {
 
     private String mlRootPath;
 
-    private HashMap<String>
+    private HashMap<String, >
 
 }
