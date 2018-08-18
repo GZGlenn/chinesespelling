@@ -11,7 +11,6 @@ import org.apache.lucene.index.Term;
 import weka.core.Instances;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -63,7 +62,7 @@ public class BasicMethod {
     public void train(String trainFile) {
 
         // read data
-        ArrayList<SighanDataBean> trainData = readTrainData(trainFile);
+        HashMap<String, SighanDataBean> trainData = readTrainData(trainFile);
 
         // load data
         HashMap<String, LMStatisticWordBean> lmModel = loadLMModel();
@@ -72,10 +71,10 @@ public class BasicMethod {
         HashMap<String, WordStatisticBean> wordModel = loadStatisticUnigram();
 
         // create more sample
-        ArrayList<SighanDataBean> candidate = createCandidate(trainData, lmModel, pmiModel);
+        HashMap<String, ArrayList<CandidateData>> candidate = createCandidate(trainData, lmModel, pmiModel);
 
         // get feature
-        ArrayList<Pair<FeatureData, Integer>> data = getFeature(candidate);
+        HashMap<String, ArrayList<Pair<FeatureData, Integer>>> data = getFeature(candidate);
 
         // train model (is need correct)
         Instances instances = formatFeature(data);
@@ -84,20 +83,21 @@ public class BasicMethod {
 
     }
 
-    private ArrayList<SighanDataBean> readTrainData(String path) {
+    private HashMap<String, SighanDataBean> readTrainData(String path) {
         ArrayList<String> lines = FileUtil.getFiles(path);
-        ArrayList<SighanDataBean> dataList = new ArrayList<>();
+        HashMap<String, SighanDataBean> dataList = new HashMap<>();
         for (String line : lines) {
-            dataList.add(SighanDataBean.parseData(line));
+            SighanDataBean dataBean = SighanDataBean.parseData(line);
+            dataList.put(dataBean.getIdStr(), dataBean);
         }
         return dataList;
     }
 
     // create candidate by pmi and lm
-    private ArrayList<SighanDataBean> createCandidate(ArrayList<SighanDataBean> trainData,
+    private HashMap<String, ArrayList<CandidateData>> createCandidate(ArrayList<SighanDataBean> trainData,
                                                       HashMap<String, LMStatisticWordBean> lmModel,
                                                       HashMap<String, PMIWordPairBean> pmiModel) {
-        ArrayList<SighanDataBean> result = new ArrayList<>();
+        HashMap<String, ArrayList<CandidateData>> result = new HashMap<>();
         for (SighanDataBean sighanData: trainData) {
 
         }
@@ -105,13 +105,14 @@ public class BasicMethod {
         return result;
     }
 
-    private ArrayList<Pair<FeatureData, Integer>> getFeature(ArrayList<SighanDataBean> candidate) {
-        ArrayList<Pair<FeatureData, Integer>> data = new ArrayList<>();
-
+    private HashMap<String, ArrayList<Pair<FeatureData, Integer>>> getFeature(HashMap<String, ArrayList<CandidateData>> candidate, HashMap<String, >) {
+        HashMap<String, ArrayList<Pair<FeatureData, Integer>>> data = new HashMap<>();
+        for (CandidateData sigData : candidate) {
+        }
         return data;
     }
 
-    private Instances formatFeature(ArrayList<Pair<FeatureData, Integer>> features) {
+    private Instances formatFeature(HashMap<String, ArrayList<Pair<FeatureData, Integer>>>  features) {
         return null;
     }
 
@@ -119,6 +120,10 @@ public class BasicMethod {
     private double calSetenceLMScore(String content, HashMap<String, LMStatisticWordBean> lmModel,
                                      HashMap<String, WordStatisticBean> unigramModel) {
         return -1;
+    }
+
+    private double calPMISScore(CandidateData data) {
+
     }
 
     private boolean isNeedStatistic() {
