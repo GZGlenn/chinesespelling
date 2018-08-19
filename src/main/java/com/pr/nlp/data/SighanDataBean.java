@@ -1,11 +1,8 @@
 package com.pr.nlp.data;
 
+import com.alibaba.fastjson.JSONObject;
 import com.hankcs.hanlp.HanLP;
 import com.hankcs.hanlp.seg.common.Term;
-import javafx.util.Pair;
-import jdk.nashorn.internal.parser.JSONParser;
-import net.sf.json.JSON;
-import net.sf.json.JSONObject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -98,7 +95,7 @@ public class SighanDataBean implements Serializable {
     public static SighanDataBean parseData(String line) {
         try {
             SighanDataBean sighanDataBean = new SighanDataBean("", "");
-            JSONObject jsonObj = JSONObject.fromObject(line);
+            JSONObject jsonObj = JSONObject.parseObject(line);
             sighanDataBean.idStr = (String) jsonObj.getOrDefault("idStr", "");
             sighanDataBean.content = (String) jsonObj.getOrDefault("content", "");
             sighanDataBean.location = (int) jsonObj.getOrDefault("location", -1);
@@ -114,7 +111,7 @@ public class SighanDataBean implements Serializable {
 
     @Override
     public String toString() {
-        JSONObject jsonObject = JSONObject.fromObject(this);
+        JSONObject jsonObject = JSONObject.parseObject(this.show());
         return jsonObject.toString();
     }
 

@@ -23,6 +23,11 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.28</version>
+        </dependency>
         <!--<dependency>-->
             <!--<groupId>tw.edu.ntu.csie</groupId>-->
             <!--<artifactId>libsvm</artifactId>-->
