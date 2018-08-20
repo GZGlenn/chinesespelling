@@ -82,6 +82,7 @@ public class LanguageModelManager {
                     unigram.put(word, num);
                     total += num;
                     System.out.println("load unigram : " + word + "\t" + ++index);
+//                    if (index > 1000) break;
                 } catch (Exception e) {
                     e.printStackTrace();
                     continue;
@@ -132,6 +133,7 @@ public class LanguageModelManager {
                     if (!lmModel.containsKey(wordA)) lmModel.put(wordA, new HashMap<>());
                     lmModel.get(wordA).put(wordB, frequency);
                     System.out.println("load lmmodel : " + wordA + "\t" + wordB + "\t" + ++index);
+//                    if (index > 1000) break;
                 } catch (Exception e) {
                     e.printStackTrace();
                     continue;

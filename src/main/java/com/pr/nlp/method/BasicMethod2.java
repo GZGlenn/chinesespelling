@@ -14,6 +14,7 @@ import weka.core.DenseInstance;
 import weka.core.Instance;
 import weka.core.Instances;
 
+import java.io.File;
 import java.util.*;
 
 public class BasicMethod2 {
@@ -30,7 +31,7 @@ public class BasicMethod2 {
     private int maxChangeInOneWin = 5;
     private int maxChange = 100;
 
-    private double pmiThre = 0.3;
+    private double pmiThre = -10000;
     private double lmThre = 0.1;
 
     public BasicMethod2(String outputRootn) {
@@ -163,11 +164,14 @@ public class BasicMethod2 {
     }
 
     private ArrayList<SighanDataBean> readFileData(String path) {
-        ArrayList<String> lines = FileUtil.getFiles(path);
+        ArrayList<String> filePathes = FileUtil.getFiles(path);
         ArrayList<SighanDataBean> dataList = new ArrayList<>();
-        for (String line : lines) {
-            SighanDataBean dataBean = SighanDataBean.parseData(line);
-            dataList.add(dataBean);
+        for (String filePath : filePathes) {
+            ArrayList<String> lines = FileUtil.readFileByLine(filePath);
+            for (String line : lines) {
+                SighanDataBean dataBean = SighanDataBean.parseData(line);
+                dataList.add(dataBean);
+            }
         }
         return dataList;
     }
@@ -179,7 +183,7 @@ public class BasicMethod2 {
             int start = 0;
             int end = Math.min(termList.size(), start + winsize);
             int curStartPos = 0;
-            int curChangePos = 0;
+            int curChangePos = -1;
             ArrayList<ArrayList<ChangeData>> changeAllList = new ArrayList<>();
             do {
                 ArrayList<Term> list = new ArrayList<>();
@@ -190,7 +194,9 @@ public class BasicMethod2 {
                 // only one change in a single win
                 ArrayList<ChangeData> changeList = new ArrayList<>();
                 curChangePos = getChangeDataInSingleWin(list, changeList, curStartPos, curChangePos);
-                if (!changeList.isEmpty()) changeAllList.add(changeList);
+                if (!changeList.isEmpty()) {
+                    changeAllList.add(changeList);
+                }
                 if (curChangePos > 1) {
                     start += curChangePos - 2;
                     curChangePos = 2;
@@ -222,7 +228,7 @@ public class BasicMethod2 {
         int curStrPos = 0;
         int lastChgPos = 0;
         float lmScore = lmManager.calLM(termList);
-        double originScore = lmScore + 1 / termList.size();
+        double originScore = lmScore + 10.0 / termList.size();
         for (int i = lastWinChgPos + 1 ; i < termList.size(); i++) {
             if (i != 0) curStrPos += termList.get(i-1).length();
             if (termList.get(i).nature.startsWith("w")) continue;
@@ -232,9 +238,9 @@ public class BasicMethod2 {
 
             float pmi = 0;
             if (i == 0) pmi = lmManager.calPMI(termList.get(i).word, termList.get(i+1).word);
-            if (i == termList.size() - 1) pmi = lmManager.calPMI(termList.get(-1).word, termList.get(i).word);
+            else if (i == termList.size() - 1) pmi = lmManager.calPMI(termList.get(i-1).word, termList.get(i).word);
             else pmi = (lmManager.calPMI(termList.get(i).word, termList.get(i+1).word) +
-                    lmManager.calPMI(termList.get(-1).word, termList.get(i).word)) / 2;
+                    lmManager.calPMI(termList.get(i-1).word, termList.get(i).word)) / 2;
 
             if (pmi < pmiThre) {
                 lastChgPos = i;
@@ -243,12 +249,28 @@ public class BasicMethod2 {
                 for (String simWord : simWordList) {
                     String modifiedContent = content.substring(0, curStrPos) + simWord + content.substring(curStrPos + len, content.length());
                     List<Term> modifiedTermList = HanLP.segment(modifiedContent);
+
+                    float modifiedPMI = 0;
+                    if (i == 0) modifiedPMI = lmManager.calPMI(modifiedTermList.get(i).word, modifiedTermList.get(i+1).word);
+                    else if (i == termList.size() - 1) modifiedPMI = lmManager.calPMI(modifiedTermList.get(i-1).word, modifiedTermList.get(i).word);
+                    else modifiedPMI = (lmManager.calPMI(modifiedTermList.get(i).word, modifiedTermList.get(i+1).word) +
+                                lmManager.calPMI(modifiedTermList.get(i-1).word, modifiedTermList.get(i).word)) / 2;
+
+                    if (modifiedPMI <= pmi || modifiedPMI == 0 || modifiedPMI < pmiThre) continue;
+
                     float modifiedLmScore = lmManager.calLM(modifiedTermList);
-                    double modifiedScore = modifiedLmScore + 1 / modifiedTermList.size();
+                    double modifiedScore = modifiedLmScore + 10.0 / modifiedTermList.size();
+                    if (simWord.equals("住")) {
+                        System.out.println(termList.get(i).word + " ==>" + simWord);
+                    }
                     if (modifiedScore > originScore) {
                         boolean isNeedSort = false;
+                        modifiedScore = modifiedScore  + (-1) * 1000 / modifiedPMI;
                         if (tmpResult.size() >= maxChangeInOneWin) {
-                            if (tmpResult.get(tmpResult.size() - 1).getRight() < modifiedScore) {
+                            if (tmpResult.get(tmpResult.size() - 1).getRight() == modifiedScore) {
+                                tmpResult.add(new ImmutablePair<>(new ChangeData(winStart + curStrPos, winStart + curStrPos + len, simWord), modifiedScore));
+                            }
+                            else if (tmpResult.get(tmpResult.size() - 1).getRight() < modifiedScore) {
                                 isNeedSort = true;
                                 tmpResult.set(tmpResult.size() - 1, new ImmutablePair<>(new ChangeData(winStart + curStrPos, winStart + curStrPos + len, simWord), modifiedScore));
                             }

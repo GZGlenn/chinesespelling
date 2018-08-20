@@ -10,12 +10,12 @@ import java.util.stream.StreamSupport;
 public class TestDriver {
 
     public static void main(String[] args) {
-        String trainPath = "/Users/glenn/nlp/wordspelling/basic_method/data/sighan_train_2015.txt";
+        String trainPath = "/home/public/code/chinese_spelling/chinesespelling/data/";
         String lmPath = "/home/public/dataset/nlp/GNLP/ngram/output_clean/";
         String lmTime = "20180818-111108";
         String simPath = "/home/public/code/chinese_spelling/chinesespelling/src/main/resource/";
         String word2vecPath = "/home/glenn/IdeaProjects/wordEmbedding_model/20180803-002633_chinese_vectors.txt";
-        String outputPath = "";
+        String outputPath = "/home/public/code/chinese_spelling/chinesespelling/model/";
 
         BasicMethod2 method2 = new BasicMethod2(outputPath);
         method2.initLMManager(lmPath, lmTime);
