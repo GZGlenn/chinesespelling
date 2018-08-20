@@ -1,11 +1,10 @@
 package com.pr.nlp.data;
 
+import com.alibaba.fastjson.JSONObject;
 import com.hankcs.hanlp.HanLP;
 import com.hankcs.hanlp.seg.common.Term;
-import javafx.util.Pair;
-import jdk.nashorn.internal.parser.JSONParser;
-import net.sf.json.JSON;
-import net.sf.json.JSONObject;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -34,7 +33,7 @@ public class SighanDataBean implements Serializable {
     }
 
     public SighanDataBean(String idStr, String content) {
-        this(idStr, content, -1, "", "");
+        this(idStr, content, 0, "", "");
     }
 
     public String getIdStr() {
@@ -89,21 +88,45 @@ public class SighanDataBean implements Serializable {
         }
     }
 
+    public void addChangeDataArray(ArrayList<ChangeData> dataList) {
+        changeList.add(dataList);
+    }
+
     public String calCorrectContent() {
         String prefix = content.substring(0, location);
         String posfix = content.substring(location + errorStr.length(), content.length());
         return prefix + this.correctStr + posfix;
     }
 
+    public String calCandidateContent(ArrayList<ChangeData> list) {
+
+        String changeContent = content;
+        int deltaLen = 0;
+        for (ChangeData changeData : list) {
+            String prefix = changeContent.substring(0, changeData.getStartInd() + deltaLen);
+            String posfix = changeContent.substring(changeData.getEndInd() + deltaLen, changeContent.length());
+            changeContent = prefix + changeData.getChangeStr() + posfix;
+            deltaLen = changeContent.length() - content.length();
+        }
+
+        return changeContent;
+    }
+
     public static SighanDataBean parseData(String line) {
         try {
             SighanDataBean sighanDataBean = new SighanDataBean("", "");
-            JSONObject jsonObj = JSONObject.fromObject(line);
+            JSONObject jsonObj = JSONObject.parseObject(line);
             sighanDataBean.idStr = (String) jsonObj.getOrDefault("idStr", "");
             sighanDataBean.content = (String) jsonObj.getOrDefault("content", "");
             sighanDataBean.location = (int) jsonObj.getOrDefault("location", -1);
             sighanDataBean.correctStr = (String) jsonObj.getOrDefault("correctStr", "");
             sighanDataBean.errorStr = (String) jsonObj.getOrDefault("errorStr", "");
+            int start = sighanDataBean.location - 1;
+            int end = sighanDataBean.errorStr.length() + start;
+            ChangeData changeData = new ChangeData(start, end, sighanDataBean.correctStr);
+            ArrayList<ChangeData> dataList = new ArrayList<>();
+            dataList.add(changeData);
+            sighanDataBean.addChangeDataArray(dataList);
             return sighanDataBean;
         } catch (Exception e) {
             System.out.println("parser sighanData error:" + e.getMessage());
@@ -114,7 +137,7 @@ public class SighanDataBean implements Serializable {
 
     @Override
     public String toString() {
-        JSONObject jsonObject = JSONObject.fromObject(this);
+        JSONObject jsonObject = JSONObject.parseObject(this.show());
         return jsonObject.toString();
     }
 

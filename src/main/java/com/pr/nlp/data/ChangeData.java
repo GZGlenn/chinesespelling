@@ -1,6 +1,7 @@
 package com.pr.nlp.data;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class ChangeData implements Serializable {
 
@@ -38,4 +39,19 @@ public class ChangeData implements Serializable {
         this.changeStr = changeStr;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ChangeData that = (ChangeData) o;
+        return startInd == that.startInd &&
+                endInd == that.endInd &&
+                Objects.equals(changeStr, that.changeStr);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(startInd, endInd, changeStr);
+    }
 }

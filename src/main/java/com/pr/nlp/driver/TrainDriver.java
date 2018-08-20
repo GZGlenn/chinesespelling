@@ -1,6 +1,6 @@
 package com.pr.nlp.driver;
 
-import com.pr.nlp.method.BasicMethod;
+import com.pr.nlp.method.BasicMethod2;
 import com.pr.nlp.util.FileUtil;
 
 public class TrainDriver {
@@ -42,7 +42,7 @@ public class TrainDriver {
         }
 
         if (method.equals("basic")) {
-            BasicMethod basicMethod = new BasicMethod(inputRoot, outputRoot);
+            BasicMethod2 basicMethod = new BasicMethod2(outputRoot);
 //            basicMethod.train();
         }
 
