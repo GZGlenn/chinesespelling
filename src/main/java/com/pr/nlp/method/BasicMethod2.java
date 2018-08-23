@@ -260,9 +260,7 @@ public class BasicMethod2 {
 
                     float modifiedLmScore = lmManager.calLM(modifiedTermList);
                     double modifiedScore = modifiedLmScore + 10.0 / modifiedTermList.size();
-                    if (simWord.equals("住")) {
-                        System.out.println(termList.get(i).word + " ==>" + simWord);
-                    }
+
                     if (modifiedScore > originScore) {
                         boolean isNeedSort = false;
                         modifiedScore = modifiedScore  + (-1) * 1000 / modifiedPMI;

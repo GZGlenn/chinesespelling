@@ -70,7 +70,6 @@ public class WordSimilarCalculator2 {
         return result;
     }
 
-
     public ArrayList<String> getPronunSimilarWord(String word, int wordnum) {
         return getSpecialSimilarWord(word, wordnum, pronunSimialrWordList);
     }
@@ -104,37 +103,5 @@ public class WordSimilarCalculator2 {
 
         return result;
     }
-
-//    private ArrayList<String> getResourceData(String url) {
-//        ArrayList<String> result = new ArrayList<>();
-//        InputStream inputStream = this.getClass().getResourceAsStream(url);
-//        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-//        String line = "";
-//        try {
-//            while((line = bufferedReader.readLine()) != null) {
-//                result.add(line.trim());
-//            }
-//        } catch (Exception e) {
-//            System.out.println("error get Resource:" + url + " ==> " + e.getMessage());
-//        }finally {
-//            if (bufferedReader != null) {
-//                try {
-//                    bufferedReader.close();
-//                } catch (Exception e) {
-//                    System.out.println("error close bufferedReader:" + url + " ==> " + e.getMessage());
-//                }
-//            }
-//
-//            if (inputStream != null) {
-//                try {
-//                    inputStream.close();
-//                } catch (Exception e) {
-//                    System.out.println("error close inputStream:" + url + " ==> " + e.getMessage());
-//                }
-//            }
-//
-//            return result;
-//        }
-//    }
 
 }
