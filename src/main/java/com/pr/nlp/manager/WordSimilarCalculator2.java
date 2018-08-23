@@ -13,7 +13,7 @@ public class WordSimilarCalculator2 {
     private String root_path = "/home/public/code/chinese_spelling/SimilarWordCalculator/src/main/resources/";
     private final String shape_similar_file_name = "shape_similar.txt";
     private final String pronounce_similar_file_name = "pronounce_similar.txt";
-    private final String pinyin_similar_file_name = "pinyin_similar.txt";
+    private final String pinyin_similar_file_name = "pinyin_similar_thre_zero.txt";
 
 
     private ArrayList<ArrayList<String>> shapeSimilarWordList;
@@ -64,12 +64,11 @@ public class WordSimilarCalculator2 {
     public HashSet<String> getSimilarWord(String word) {
         int wordnum = HanLP.segment(word).size();
         HashSet<String> result = new HashSet<>();
-        result.addAll(getPronunSimilarWord(word, wordnum));
-        result.addAll(getShapeSimilarWord(word, wordnum));
+//        result.addAll(getPronunSimilarWord(word, wordnum));
+//        result.addAll(getShapeSimilarWord(word, wordnum));
         result.addAll(getPinyinSimilarWord(word, wordnum));
         return result;
     }
-
 
     public ArrayList<String> getPronunSimilarWord(String word, int wordnum) {
         return getSpecialSimilarWord(word, wordnum, pronunSimialrWordList);
@@ -77,7 +76,24 @@ public class WordSimilarCalculator2 {
 
 
     public ArrayList<String> getPinyinSimilarWord(String word, int wordnum) {
-        return getSpecialSimilarWord(word, wordnum, pinyinSimialrWordList);
+        ArrayList<String> result = new ArrayList<>();
+
+        for (int i = 0 ; i < word.length(); i++) {
+            String singleWord = word.charAt(i) + "";
+            ArrayList<String> simWordList = new ArrayList<>();
+            for (ArrayList<String> singleLine : pinyinSimialrWordList) {
+                if (singleLine.get(0).equals(singleWord)) {
+                    simWordList.addAll(singleLine);
+                }
+            }
+            for (String str: simWordList) {
+                String modifiedWord = word.replace(word.charAt(i) + "", str);
+                if (HanLP.segment(modifiedWord).size() <= wordnum) result.add(modifiedWord);
+            }
+        }
+
+
+        return result;
     }
 
     public ArrayList<String> getShapeSimilarWord(String word, int wordnum) {

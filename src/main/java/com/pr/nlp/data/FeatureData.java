@@ -78,7 +78,7 @@ public class FeatureData {
         this.pmifeat = calPMIFeat(changeContent, modifiedPos, lmManager);
         this.wordNum = modifiedTermList.size();
 
-        if (data.getCorrectContent() == changeContent) this.label = 1;
+        if (data.getCorrectContent().equals(changeContent)) this.label = 1;
         else this.label = -1;
 
     }
