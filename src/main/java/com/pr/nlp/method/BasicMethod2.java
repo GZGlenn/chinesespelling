@@ -79,6 +79,7 @@ public class BasicMethod2 {
         // get feature
         HashMap<String, ArrayList<FeatureData>> data = getFeature(trainData);
 
+
         // train model (is need correct)
         Instances instances = formatFeature(data);
         this.model = new MSMOReg();
@@ -251,12 +252,14 @@ public class BasicMethod2 {
                     List<Term> modifiedTermList = HanLP.segment(modifiedContent);
 
                     float modifiedPMI = 0;
-                    if (i == 0) modifiedPMI = lmManager.calPMI(modifiedTermList.get(i).word, modifiedTermList.get(i+1).word);
-                    else if (i == termList.size() - 1) modifiedPMI = lmManager.calPMI(modifiedTermList.get(i-1).word, modifiedTermList.get(i).word);
-                    else modifiedPMI = (lmManager.calPMI(modifiedTermList.get(i).word, modifiedTermList.get(i+1).word) +
-                                lmManager.calPMI(modifiedTermList.get(i-1).word, modifiedTermList.get(i).word)) / 2;
+                    int modifiedPos = i;
+                    if (modifiedPos >= modifiedTermList.size()) modifiedPos = modifiedTermList.size() - 1;
+                    if (modifiedPos == 0) modifiedPMI = lmManager.calPMI(modifiedTermList.get(modifiedPos).word, modifiedTermList.get(modifiedPos+1).word);
+                    else if (modifiedPos == modifiedTermList.size() - 1) modifiedPMI = lmManager.calPMI(modifiedTermList.get(modifiedPos-1).word, modifiedTermList.get(modifiedPos).word);
+                    else modifiedPMI = (lmManager.calPMI(modifiedTermList.get(modifiedPos).word, modifiedTermList.get(modifiedPos+1).word) +
+                                lmManager.calPMI(modifiedTermList.get(modifiedPos-1).word, modifiedTermList.get(modifiedPos).word)) / 2;
 
-                    if (modifiedPMI <= pmi || modifiedPMI == 0 || modifiedPMI < pmiThre) continue;
+                    if (modifiedTermList.size() > termList.size() || ( modifiedTermList.size() == termList.size() && (modifiedPMI <= pmi || modifiedPMI == 0 || modifiedPMI < pmiThre))) continue;
 
                     float modifiedLmScore = lmManager.calLM(modifiedTermList);
                     double modifiedScore = modifiedLmScore + 10.0 / modifiedTermList.size();
@@ -301,9 +304,7 @@ public class BasicMethod2 {
     // lm model get top 20
     private ArrayList<ArrayList<ChangeData>> mergeAndBasicChoose(SighanDataBean data, ArrayList<ArrayList<ChangeData>> changeWinList) {
         ArrayList<Pair<ArrayList<ChangeData>, Double>> mergeResult = new ArrayList<>();
-        for (int i = 0 ; i < changeWinList.size(); i++) {
-
-        }
+        dfsChangeDataList(data, mergeResult, changeWinList, new ArrayList<ChangeData>(), 0);
 
         ArrayList<ArrayList<ChangeData>> result = new ArrayList<>();
         for (int i = 0 ; i < mergeResult.size(); i++) result.add(mergeResult.get(i).getLeft());
@@ -383,6 +384,7 @@ public class BasicMethod2 {
                 instances.add(instance);
             }
         }
+
 
         return instances;
     }

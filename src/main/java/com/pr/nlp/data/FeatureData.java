@@ -7,6 +7,7 @@ import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.ArrayList;
+import java.util.IllegalFormatException;
 import java.util.List;
 
 public class FeatureData {
@@ -58,6 +59,69 @@ public class FeatureData {
         this.label = label;
     }
 
+    public void calFeature(String originStr, String modifiedStr, String correctStr, LanguageModelManager lmManager) {
+        if (originStr.length() != modifiedStr.length()) {
+            System.out.println("modified length is not equal to origin : " + originStr.length() + " != " + modifiedStr.length());
+        }
+
+        List<Term> originTermList = HanLP.segment(originStr);
+        List<Term> modifiedTermList = HanLP.segment(modifiedStr);
+        this.lmfeat = lmManager.calLM(originTermList) / lmManager.calLM(modifiedTermList);
+
+        int originIdx = 0, modifiedIdx = 0;
+        int originCalLen = 0, modifiedCalLen = 0;
+        ArrayList<Integer> originDiffList = new ArrayList<>();
+        ArrayList<Integer> modifiedDiffList = new ArrayList<>();
+        while(originIdx < originTermList.size() && modifiedIdx < modifiedTermList.size()) {
+            String originWord = originTermList.get(originIdx).word;
+            String modifiedWord = modifiedTermList.get(modifiedIdx).word;
+            if (!originWord.equals(modifiedWord)) {
+                originDiffList.add(originIdx);
+                modifiedDiffList.add(modifiedIdx);
+            }
+            ++originIdx;
+            ++modifiedIdx;
+            originCalLen += originWord.length();
+            modifiedCalLen += modifiedWord.length();
+
+            while (originCalLen != modifiedCalLen) {
+                if (originCalLen < modifiedCalLen) {
+                    int innerLen = originTermList.get(originIdx).word.length();
+                    originDiffList.add(originIdx);
+                    ++originIdx;
+                    originCalLen += innerLen;
+                } else {
+                    int innerLen = modifiedTermList.get(modifiedIdx).word.length();
+                    modifiedDiffList.add(modifiedIdx);
+                    ++modifiedIdx;
+                    modifiedCalLen += innerLen;
+                }
+            }
+        }
+
+        double originPMIS = calPMIS(originTermList, originDiffList, lmManager);
+        double modifiedPMIS = calPMIS(modifiedTermList, modifiedDiffList, lmManager);
+        if (modifiedPMIS == 0) this.pmifeat = 0;
+        else this.pmifeat = originPMIS / modifiedPMIS;
+        this.wordNum = modifiedTermList.size();
+
+        if (modifiedStr.equals(correctStr)) this.label = 1;
+        else this.label = 0;
+    }
+
+    private double calPMIS(List<Term> termList, ArrayList<Integer> diffList, LanguageModelManager lmManager) {
+        double pmis = 0;
+        for (int diffIdx = 0 ; diffIdx < diffList.size(); diffIdx++) {
+            for (int i = 0 ; i < termList.size(); i++) {
+                if (diffIdx == i) continue;
+                double pmi = lmManager.calPMI(termList.get(diffIdx).word, termList.get(i).word);
+                pmis += pmi;
+            }
+        }
+
+        return pmis / diffList.size() / (termList.size());
+    }
+
     public void calFeature(SighanDataBean data, int candidateIdx, LanguageModelManager lmManager) {
 
         String changeContent = data.getContent();
@@ -78,7 +142,7 @@ public class FeatureData {
         this.pmifeat = calPMIFeat(changeContent, modifiedPos, lmManager);
         this.wordNum = modifiedTermList.size();
 
-        if (data.getCorrectContent() == changeContent) this.label = 1;
+        if (data.getCorrectContent().equals(changeContent)) this.label = 1;
         else this.label = -1;
 
     }

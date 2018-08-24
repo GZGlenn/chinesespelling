@@ -1,10 +1,7 @@
 package com.pr.nlp.manager;
 
 import com.hankcs.hanlp.HanLP;
-import com.pr.nlp.util.DistanceUtil;
 import com.pr.nlp.util.FileUtil;
-import org.apache.commons.lang3.tuple.ImmutablePair;
-import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.*;
 
@@ -13,18 +10,18 @@ public class WordSimilarCalculator2 {
     private String root_path = "/home/public/code/chinese_spelling/SimilarWordCalculator/src/main/resources/";
     private final String shape_similar_file_name = "shape_similar.txt";
     private final String pronounce_similar_file_name = "pronounce_similar.txt";
-    private final String pinyin_similar_file_name = "pinyin_similar.txt";
+    private final String pinyin_word_similar_file_name = "pinyin_similar_word.txt";
 
 
     private ArrayList<ArrayList<String>> shapeSimilarWordList;
     private ArrayList<ArrayList<String>> pronunSimialrWordList;
-    private ArrayList<ArrayList<String>> pinyinSimialrWordList;
+    private ArrayList<ArrayList<String>> pinyinWordSimialrWordList;
 
     public WordSimilarCalculator2(String root_path) {
         this.root_path = root_path;
         initShapeSimilarWordList();
         initPronunSimilarWordList();
-        initPinyinSimilarWordList();
+        initPinyinWordSimilarWordList();
     }
 
     public String getRoot_path() {
@@ -52,20 +49,19 @@ public class WordSimilarCalculator2 {
         }
     }
 
-    private void initPinyinSimilarWordList() {
-        pinyinSimialrWordList = new ArrayList<>();
-        ArrayList<String> lines = FileUtil.readFileByLine(root_path + pinyin_similar_file_name);
+    private void initPinyinWordSimilarWordList() {
+        pinyinWordSimialrWordList = new ArrayList<>();
+        ArrayList<String> lines = FileUtil.readFileByLine(root_path + pinyin_word_similar_file_name);
         for (String line : lines) {
-            pinyinSimialrWordList.add(new ArrayList<String>(Arrays.asList(line.split(","))));
+            pinyinWordSimialrWordList.add(new ArrayList<String>(Arrays.asList(line.split(","))));
         }
     }
-
-
+    s
     public HashSet<String> getSimilarWord(String word) {
         int wordnum = HanLP.segment(word).size();
         HashSet<String> result = new HashSet<>();
-        result.addAll(getPronunSimilarWord(word, wordnum));
-        result.addAll(getShapeSimilarWord(word, wordnum));
+//        result.addAll(getPronunSimilarWord(word, wordnum));
+//        result.addAll(getShapeSimilarWord(word, wordnum));
         result.addAll(getPinyinSimilarWord(word, wordnum));
         return result;
     }
@@ -76,7 +72,24 @@ public class WordSimilarCalculator2 {
 
 
     public ArrayList<String> getPinyinSimilarWord(String word, int wordnum) {
-        return getSpecialSimilarWord(word, wordnum, pinyinSimialrWordList);
+        ArrayList<String> result = new ArrayList<>();
+
+        for (int i = 0 ; i < word.length(); i++) {
+            String singleWord = word.charAt(i) + "";
+            ArrayList<String> simWordList = new ArrayList<>();
+            for (ArrayList<String> singleLine : pinyinWordSimialrWordList) {
+                if (singleLine.get(0).equals(singleWord)) {
+                    simWordList.addAll(singleLine);
+                }
+            }
+            for (String str: simWordList) {
+                String modifiedWord = word.replace(word.charAt(i) + "", str);
+                if (HanLP.segment(modifiedWord).size() <= wordnum) result.add(modifiedWord);
+            }
+        }
+
+
+        return result;
     }
 
     public ArrayList<String> getShapeSimilarWord(String word, int wordnum) {

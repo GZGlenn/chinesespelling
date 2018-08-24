@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2550487d-cdd0-4b66-8499-7c081f88de22" name="Default" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod2.java" afterDir="false" />
+=======
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resource/pinyin_similar_thre_zero.txt" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/data/FeatureData.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/data/FeatureData.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator2.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator2.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod2.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod2.java" />
+>>>>>>> 5cba1d685659791c8d62a800f3b3d210cb1d65df
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +24,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="TrainDriver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TrainDriver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="TestDriver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestDriver.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="285">
               <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+=======
+            <state relative-caret-position="306">
+              <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+              <folding />
+>>>>>>> 5cba1d685659791c8d62a800f3b3d210cb1d65df
             </state>
           </provider>
         </entry>
@@ -51,8 +75,13 @@
       <file leaf-file-name="BasicMethod2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod2.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="536">
               <caret line="272" column="42" lean-forward="true" selection-start-line="272" selection-start-column="42" selection-end-line="272" selection-end-column="42" />
+=======
+            <state relative-caret-position="368">
+              <caret line="329" column="57" lean-forward="false" selection-start-line="329" selection-start-column="57" selection-end-line="329" selection-end-column="57" />
+>>>>>>> 5cba1d685659791c8d62a800f3b3d210cb1d65df
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -60,6 +89,7 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="WordSimilarCalculator2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator2.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -69,6 +99,24 @@
                 <element signature="e#1059#1060#0" expanded="true" />
                 <element signature="e#1091#1092#0" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="FeatureData.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/data/FeatureData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="227">
+              <caret line="66" column="29" lean-forward="false" selection-start-line="66" selection-start-column="29" selection-end-line="75" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WordSimilarCalculator2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="65" column="49" lean-forward="false" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
+              <folding />
+>>>>>>> 5cba1d685659791c8d62a800f3b3d210cb1d65df
             </state>
           </provider>
         </entry>
@@ -87,6 +135,8 @@
     <findStrings>
       <find>showTestResult</find>
       <find>住</find>
+      <find>^注</find>
+      <find>注</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -95,13 +145,15 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/data/FeatureData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/data/ChangeData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/data/SighanDataBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/util/EvalUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestDriver.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/LanguageModelManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestWordSimilar.java" />
+        <option value="$PROJECT_DIR$/src/main/resource/pinyin_similar_thre_zero.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/data/FeatureData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod2.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator2.java" />
       </list>
@@ -224,6 +276,13 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resource" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="chinesespelling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chinesespelling" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -233,6 +292,11 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resource" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -342,13 +406,21 @@
       <workItem from="1534247059912" duration="38069000" />
       <workItem from="1534586101681" duration="173000" />
       <workItem from="1534739838202" duration="15832000" />
+<<<<<<< HEAD
       <workItem from="1534780774538" duration="7377000" />
       <workItem from="1534826774299" duration="6445000" />
+=======
+      <workItem from="1534780774538" duration="21467000" />
+>>>>>>> 5cba1d685659791c8d62a800f3b3d210cb1d65df
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="29639000" />
+=======
+    <option name="totallyTimeSpent" value="37284000" />
+>>>>>>> 5cba1d685659791c8d62a800f3b3d210cb1d65df
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="824" extended-state="6" />
@@ -395,32 +467,21 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod2.java</url>
-          <line>76</line>
+          <line>83</line>
           <properties />
-          <option name="timeStamp" value="5" />
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod2.java</url>
-          <line>79</line>
+          <line>329</line>
           <properties />
-          <option name="timeStamp" value="6" />
+          <option name="timeStamp" value="71" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod2.java</url>
-          <line>82</line>
+          <line>348</line>
           <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod2.java</url>
-          <line>84</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod2.java</url>
-          <line>244</line>
-          <properties />
+<<<<<<< HEAD
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -452,12 +513,16 @@
           <line>275</line>
           <properties />
           <option name="timeStamp" value="53" />
+=======
+          <option name="timeStamp" value="72" />
+>>>>>>> 5cba1d685659791c8d62a800f3b3d210cb1d65df
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="57" />
+      <option name="time" value="73" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/util/CsvUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="798">
@@ -472,6 +537,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> 5cba1d685659791c8d62a800f3b3d210cb1d65df
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/data/WordPairStisticBean.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="546">
@@ -607,6 +674,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/model/MSMOReg.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
@@ -625,6 +693,9 @@
         </state>
       </provider>
     </entry>
+=======
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/src.zip!/java/util/AbstractList.java" />
+>>>>>>> 5cba1d685659791c8d62a800f3b3d210cb1d65df
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/data/ChangeData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="735">
@@ -657,7 +728,7 @@
         <state relative-caret-position="52">
           <caret line="128" column="52" lean-forward="true" selection-start-line="128" selection-start-column="52" selection-end-line="128" selection-end-column="52" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -681,12 +752,23 @@
         <state relative-caret-position="848">
           <caret line="60" column="21" selection-start-line="60" selection-start-column="21" selection-end-line="60" selection-end-column="21" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/HashMap.class" />
+=======
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/HashMap.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="99" column="11" lean-forward="false" selection-start-line="99" selection-start-column="11" selection-end-line="99" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 5cba1d685659791c8d62a800f3b3d210cb1d65df
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/LanguageModelManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -697,34 +779,73 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/Word2VecManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
+<<<<<<< HEAD
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+=======
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TrainDriver.java">
+    <entry file="file://$PROJECT_DIR$/data/sighan_train_2015.txt">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="2" lean-forward="false" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
+          <folding />
+>>>>>>> 5cba1d685659791c8d62a800f3b3d210cb1d65df
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/shape_similar.txt">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="306">
           <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="204">
+          <caret line="230" column="13" lean-forward="false" selection-start-line="230" selection-start-column="12" selection-end-line="230" selection-end-column="13" />
+          <folding />
+>>>>>>> 5cba1d685659791c8d62a800f3b3d210cb1d65df
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestDriver.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resource/pronounce_similar.txt">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="285">
           <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+=======
+        <state relative-caret-position="226">
+          <caret line="2659" column="19" lean-forward="false" selection-start-line="2659" selection-start-column="19" selection-end-line="2659" selection-end-column="20" />
+          <folding />
+>>>>>>> 5cba1d685659791c8d62a800f3b3d210cb1d65df
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestWordSimilar.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resource/pinyin_similar_thre_zero.txt">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state>
           <caret column="22" selection-start-column="22" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="204">
+          <caret line="7062" column="55" lean-forward="false" selection-start-line="7062" selection-start-column="0" selection-end-line="7063" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="65" column="49" lean-forward="false" selection-start-line="65" selection-start-column="49" selection-end-line="65" selection-end-column="49" />
+          <folding />
+>>>>>>> 5cba1d685659791c8d62a800f3b3d210cb1d65df
         </state>
       </provider>
     </entry>
@@ -737,6 +858,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/resource/pinyin_similar.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -755,6 +877,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="259">
           <caret line="70" column="5" lean-forward="true" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestWordSimilar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+>>>>>>> 5cba1d685659791c8d62a800f3b3d210cb1d65df
           <folding>
             <element signature="e#1059#1060#0" expanded="true" />
             <element signature="e#1091#1092#0" expanded="true" />
@@ -762,10 +890,52 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="536">
           <caret line="272" column="42" lean-forward="true" selection-start-line="272" selection-start-column="42" selection-end-line="272" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TrainDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="18" lean-forward="false" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <folding />
+>>>>>>> 5cba1d685659791c8d62a800f3b3d210cb1d65df
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/model/MSMOReg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/data/FeatureData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="66" column="29" lean-forward="false" selection-start-line="66" selection-start-column="29" selection-end-line="75" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="329" column="57" lean-forward="false" selection-start-line="329" selection-start-column="57" selection-end-line="329" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
