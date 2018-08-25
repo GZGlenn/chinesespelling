@@ -176,13 +176,15 @@ public class BasicMethod3 {
         for (String filePath : filePathes) {
             ArrayList<String> lines = FileUtil.readFileByLine(filePath);
             for (String line : lines) {
-                SighanDataBean2 dataBean = SighanDataBean2.parseData(line);
-                if (!dataList.containsKey(dataBean.getIdStr())) {
-                    dataList.put(dataBean.getIdStr(), dataBean);
-                } else {
-                    SighanDataBean2 oldData = dataList.get(dataBean.getIdStr());
-                    oldData.addCorrectTriplet(dataBean.getCorrectTriplet());
-                    dataList.put(dataBean.getIdStr(), oldData);
+                ArrayList<SighanDataBean2> dataBeanList = SighanDataBean2.parseData2(line);
+                for (SighanDataBean2 dataBean : dataBeanList) {
+                    if (!dataList.containsKey(dataBean.getIdStr())) {
+                        dataList.put(dataBean.getIdStr(), dataBean);
+                    } else {
+                        SighanDataBean2 oldData = dataList.get(dataBean.getIdStr());
+                        oldData.addCorrectTriplet(dataBean.getCorrectTriplet());
+                        dataList.put(dataBean.getIdStr(), oldData);
+                    }
                 }
             }
         }

@@ -61,11 +61,11 @@ public class SighanDataBean2 implements Serializable {
         this.correctTriplet = correctTriplet;
     }
 
-    public void addCorrectTriplet(ImmutableTriple<Integer, String, String> triple) {
+    public void addCorrectTriplet(Triple<Integer, String, String> triple) {
         this.correctTriplet.add(triple);
     }
 
-    public void addCorrectTriplet(ArrayList<ImmutableTriple<Integer, String, String>> tripleList) {
+    public void addCorrectTriplet(ArrayList<Triple<Integer, String, String>> tripleList) {
         this.correctTriplet.addAll(tripleList);
     }
 
@@ -147,6 +147,10 @@ public class SighanDataBean2 implements Serializable {
         SighanDataBean2 data = parseData(line);
         ArrayList<SighanDataBean2> result = new ArrayList<>();
 
+        if (data.getIdStr().equals("A2-0106-1")) {
+            System.out.println(12313);
+        }
+
         List<String> sentenceList = SentencesUtil.toSentenceList(data.content);
         if (sentenceList.size() == 1) {
             result.add(data);
@@ -156,17 +160,23 @@ public class SighanDataBean2 implements Serializable {
         else {
             int starLen = 0;
             for (int i = 0 ; i < sentenceList.size(); i++) {
+                int preLen = 0;
+                while(HanLP.segment("" + data.content.charAt(preLen)).get(0).nature.startsWith("w")) preLen++;
+                starLen += preLen;
                 SighanDataBean2 tmpData = new SighanDataBean2(data.idStr + "#" + i, sentenceList.get(i));
                 ArrayList<Triple<Integer, String, String>> tripleList = new ArrayList<>();
                 for (Triple<Integer, String, String> triple : data.getCorrectTriplet()) {
-                    if (triple.getLeft() < starLen || triple.getLeft() > starLen + sentenceList.get(i).length()) continue;
+                    if (triple.getLeft() < starLen || triple.getLeft() >= starLen + sentenceList.get(i).length()) continue;
                     Triple<Integer, String, String> newTriplet = new ImmutableTriple<>(triple.getLeft() - starLen, triple.getMiddle(), triple.getRight());
                     tripleList.add(newTriplet);
                 }
 
                 tmpData.setCorrectTriplet(tripleList);
                 result.add(tmpData);
+                starLen += tmpData.content.length();
             }
+
+            return result;
         }
     }
 
