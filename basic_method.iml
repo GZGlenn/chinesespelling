@@ -52,5 +52,6 @@
     <orderEntry type="library" name="Maven: org.apache.lucene:lucene-analyzers:3.6.2" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.25" level="project" />
     <orderEntry type="library" name="Maven: com.hankcs:hanlp:portable-1.6.2" level="project" />
+    <orderEntry type="library" name="Maven: com.belerweb:pinyin4j:2.5.1" level="project" />
   </component>
 </module>

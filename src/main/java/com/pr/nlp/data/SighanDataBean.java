@@ -93,8 +93,9 @@ public class SighanDataBean implements Serializable {
     }
 
     public String calCorrectContent() {
-        String prefix = content.substring(0, location);
-        String posfix = content.substring(location + errorStr.length(), content.length());
+        if (errorStr.isEmpty()) return "";
+        String prefix = content.substring(0, Math.max(0, location - 1));
+        String posfix = content.substring(location + errorStr.length() - 1, content.length());
         return prefix + this.correctStr + posfix;
     }
 
@@ -121,12 +122,23 @@ public class SighanDataBean implements Serializable {
             sighanDataBean.location = (int) jsonObj.getOrDefault("location", -1);
             sighanDataBean.correctStr = (String) jsonObj.getOrDefault("correctStr", "");
             sighanDataBean.errorStr = (String) jsonObj.getOrDefault("errorStr", "");
+
+            char locChar = sighanDataBean.content.charAt(sighanDataBean.location);
+            for (int i = 0 ; i < sighanDataBean.correctStr.length() ; i++) {
+                if (sighanDataBean.correctStr.charAt(i) == locChar) {
+                    sighanDataBean.location -= i;
+                    break;
+                }
+            }
+
             int start = sighanDataBean.location - 1;
             int end = sighanDataBean.errorStr.length() + start;
             ChangeData changeData = new ChangeData(start, end, sighanDataBean.correctStr);
             ArrayList<ChangeData> dataList = new ArrayList<>();
             dataList.add(changeData);
             sighanDataBean.addChangeDataArray(dataList);
+            System.out.println(line);
+            sighanDataBean.correctContent = sighanDataBean.calCorrectContent();
             return sighanDataBean;
         } catch (Exception e) {
             System.out.println("parser sighanData error:" + e.getMessage());
@@ -148,6 +160,7 @@ public class SighanDataBean implements Serializable {
                 ", location=" + location +
                 ", errorStr='" + errorStr + '\'' +
                 ", correctStr='" + correctStr + '\'' +
+                ", correctContent='" + correctContent + '\'' +
                 '}';
 
     }

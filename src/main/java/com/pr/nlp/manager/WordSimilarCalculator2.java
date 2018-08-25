@@ -56,7 +56,7 @@ public class WordSimilarCalculator2 {
             pinyinWordSimialrWordList.add(new ArrayList<String>(Arrays.asList(line.split(","))));
         }
     }
-    s
+
     public HashSet<String> getSimilarWord(String word) {
         int wordnum = HanLP.segment(word).size();
         HashSet<String> result = new HashSet<>();

@@ -3,6 +3,7 @@ package com.pr.nlp.data;
 import com.hankcs.hanlp.HanLP;
 import com.hankcs.hanlp.seg.common.Term;
 import com.pr.nlp.manager.LanguageModelManager;
+import com.pr.nlp.manager.LanguageModelManager2;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -59,14 +60,14 @@ public class FeatureData {
         this.label = label;
     }
 
-    public void calFeature(String originStr, String modifiedStr, String correctStr, LanguageModelManager lmManager) {
+    public void calFeature(String originStr, String modifiedStr, String correctStr, LanguageModelManager2 lmManager) {
         if (originStr.length() != modifiedStr.length()) {
             System.out.println("modified length is not equal to origin : " + originStr.length() + " != " + modifiedStr.length());
         }
 
         List<Term> originTermList = HanLP.segment(originStr);
         List<Term> modifiedTermList = HanLP.segment(modifiedStr);
-        this.lmfeat = lmManager.calLM(originTermList) / lmManager.calLM(modifiedTermList);
+        this.lmfeat = lmManager.calLM(modifiedTermList) - lmManager.calLM(originTermList);
 
         int originIdx = 0, modifiedIdx = 0;
         int originCalLen = 0, modifiedCalLen = 0;
@@ -102,14 +103,14 @@ public class FeatureData {
         double originPMIS = calPMIS(originTermList, originDiffList, lmManager);
         double modifiedPMIS = calPMIS(modifiedTermList, modifiedDiffList, lmManager);
         if (modifiedPMIS == 0) this.pmifeat = 0;
-        else this.pmifeat = originPMIS / modifiedPMIS;
+        else this.pmifeat = modifiedPMIS - originPMIS;
         this.wordNum = modifiedTermList.size();
 
         if (modifiedStr.equals(correctStr)) this.label = 1;
         else this.label = 0;
     }
 
-    private double calPMIS(List<Term> termList, ArrayList<Integer> diffList, LanguageModelManager lmManager) {
+    private double calPMIS(List<Term> termList, ArrayList<Integer> diffList, LanguageModelManager2 lmManager) {
         double pmis = 0;
         for (int diffIdx = 0 ; diffIdx < diffList.size(); diffIdx++) {
             for (int i = 0 ; i < termList.size(); i++) {

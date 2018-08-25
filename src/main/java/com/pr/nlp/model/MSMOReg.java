@@ -5,6 +5,9 @@ import weka.classifiers.functions.SMOreg;
 import weka.core.Debug;
 import weka.core.Instance;
 import weka.core.Instances;
+import weka.core.SerializationHelper;
+
+import java.io.*;
 import java.util.ArrayList;
 
 public class MSMOReg {
@@ -26,16 +29,46 @@ public class MSMOReg {
     }
 
     public void loadModel(String path) {
+        ObjectInputStream ois = null;
         try {
-            this.smo =(SMOreg) weka.core.SerializationHelper.read(path);
+            ois = new ObjectInputStream(
+                    new FileInputStream(new File(path)));
+            smo = (SMOreg) ois.readObject();
         } catch (Exception e) {
             e.printStackTrace();
+            smo = null;
+        } finally {
+            if (ois != null) {
+                try {
+                    ois.close();
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
     public void saveModel(String path) {
         FileUtil.deleteFile(path);
-        Debug.saveToFile(path, smo);
+        ObjectOutputStream oos = null;
+        try {
+            oos = new ObjectOutputStream(
+                    new FileOutputStream(path));
+            oos.writeObject(smo);
+            oos.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (oos != null) {
+                try {
+                    oos.close();
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     public void trainModel(Instances instances) {

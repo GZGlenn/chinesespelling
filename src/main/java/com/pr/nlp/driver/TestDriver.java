@@ -2,6 +2,7 @@ package com.pr.nlp.driver;
 
 import com.pr.nlp.data.SighanDataBean;
 import com.pr.nlp.method.BasicMethod2;
+import com.pr.nlp.method.BasicMethod3;
 import com.pr.nlp.util.FileUtil;
 
 import java.util.ArrayList;
@@ -17,10 +18,9 @@ public class TestDriver {
         String word2vecPath = "/home/glenn/IdeaProjects/wordEmbedding_model/20180803-002633_chinese_vectors.txt";
         String outputPath = "/home/public/code/chinese_spelling/chinesespelling/model/";
 
-        BasicMethod2 method2 = new BasicMethod2(outputPath);
-        method2.initLMManager(lmPath, lmTime);
-        method2.initSimCalculator(simPath, word2vecPath);
-        method2.train(trainPath);
-
+        BasicMethod3 method = new BasicMethod3(outputPath);
+        method.initLMManager(lmPath, lmTime);
+        method.initSimCalculator(simPath, word2vecPath);
+        method.train(trainPath);
     }
 }

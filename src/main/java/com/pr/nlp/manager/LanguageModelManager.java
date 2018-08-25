@@ -13,7 +13,7 @@ public class LanguageModelManager {
 
 
     private final static String staticUnigramName = "_1gram_clean.count";
-    private final static String lmModelPath = "_cn_clean.lm";
+    private final static String lmModelPath = "_cn_clean2.lm";
 //    private final static String CONNECTMODE = "_";
 
     private String mlRootPath;
@@ -81,7 +81,7 @@ public class LanguageModelManager {
                     float num = Float.valueOf(info[1].trim());
                     unigram.put(word, num);
                     total += num;
-                    System.out.println("load unigram : " + word + "\t" + ++index);
+//                    System.out.println("load unigram : " + word + "\t" + ++index);
 //                    if (index > 1000) break;
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -132,7 +132,7 @@ public class LanguageModelManager {
                     float frequency = Float.valueOf(info[0].trim());
                     if (!lmModel.containsKey(wordA)) lmModel.put(wordA, new HashMap<>());
                     lmModel.get(wordA).put(wordB, frequency);
-                    System.out.println("load lmmodel : " + wordA + "\t" + wordB + "\t" + ++index);
+//                    System.out.println("load lmmodel : " + wordA + "\t" + wordB + "\t" + ++index);
 //                    if (index > 1000) break;
                 } catch (Exception e) {
                     e.printStackTrace();

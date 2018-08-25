@@ -2,13 +2,15 @@ package com.pr.nlp.manager;
 
 import com.hankcs.hanlp.HanLP;
 import com.hankcs.hanlp.collection.trie.DoubleArrayTrie;
+import com.hankcs.hanlp.dictionary.py.PinyinUtil;
 import com.pr.nlp.util.FileUtil;
+import com.pr.nlp.util.Pinyin4jUtil;
 
 import java.util.*;
 
 public class WordSimilarCalculator {
 
-    private String root_path = "/home/public/code/chinese_spelling/SimilarWordCalculator/src/main/resources/";
+    private String root_path = "/home/public/code/chinese_spelling/SimilarWordCalculator/src/main/resource/";
     private final String shape_similar_file_name = "shape_similar.txt";
     private final String pronounce_similar_file_name = "pronounce_similar.txt";
     private final String pinyin_word_similar_file_name = "pinyin_similar_word.txt";
@@ -17,6 +19,8 @@ public class WordSimilarCalculator {
 
     private ArrayList<ArrayList<String>> shapeSimilarWordList;
     private ArrayList<ArrayList<String>> pronunSimialrWordList;
+//    private DoubleArrayTrie<List<String>> pinyinWordSimialrWordList;
+//    private DoubleArrayTrie<List<String>> pinyinPhraseSimialrWordList;
     private DoubleArrayTrie<List<String>> pinyinWordSimialrWordList;
     private DoubleArrayTrie<List<String>> pinyinPhraseSimialrWordList;
 
@@ -59,12 +63,13 @@ public class WordSimilarCalculator {
 
         ArrayList<String> lines = FileUtil.readFileByLine(root_path + pinyin_word_similar_file_name);
         for (String line : lines) {
-            String[] spInfo = line.split(",");
+            String[] spInfo = line.split(":");
             if (!pinyinWordTreeMap.containsKey(spInfo[0])) {
                 pinyinWordTreeMap.put(spInfo[0], new ArrayList<String>());
             }
-            for (int i = 1; i < spInfo.length; i++) {
-                pinyinWordTreeMap.get(spInfo[0]).add(spInfo[i]);
+            String[] words = spInfo[1].split(",");
+            for (int i = 1; i < words.length; i++) {
+                pinyinWordTreeMap.get(spInfo[0]).add(words[i]);
             }
         }
         pinyinWordSimialrWordList.build(pinyinWordTreeMap);
@@ -76,12 +81,13 @@ public class WordSimilarCalculator {
 
         ArrayList<String> lines = FileUtil.readFileByLine(root_path + pinyin_phrase_similar_file_name);
         for (String line : lines) {
-            String[] spInfo = line.split(",");
+            String[] spInfo = line.split(":");
             if (!pinyinPhraseTreeMap.containsKey(spInfo[0])) {
                 pinyinPhraseTreeMap.put(spInfo[0], new ArrayList<String>());
             }
-            for (int i = 1; i < spInfo.length; i++) {
-                pinyinPhraseTreeMap.get(spInfo[0]).add(spInfo[i]);
+            String[] words = spInfo[1].split(",");
+            for (int i = 1; i < words.length; i++) {
+                pinyinPhraseTreeMap.get(spInfo[0]).add(words[i]);
             }
         }
         pinyinPhraseSimialrWordList.build(pinyinPhraseTreeMap);
@@ -94,21 +100,35 @@ public class WordSimilarCalculator {
     }
 
     public boolean isContainWord(String word) {
-        if (word.length() == 1) return pinyinWordSimialrWordList.containsKey(word);
-        else return pinyinPhraseSimialrWordList.containsKey(word);
+        String[] pinyinList = Pinyin4jUtil.converterToSpell(word).split(",");
+        for (String pinyin : pinyinList) {
+            if (word.length() == 1 && pinyinWordSimialrWordList.containsKey(pinyin)) return true;
+            else if (pinyinPhraseSimialrWordList.containsKey(pinyin)) return true;
+        }
+        return false;
     }
 
     public HashSet<String> getSimilarWord(String word) {
+        String[] pinyinList = Pinyin4jUtil.converterToSpell(word).split(",");
         HashSet<String> result = new HashSet<>();
 //        result.addAll(getPronunSimilarWord(word, wordnum));
 //        result.addAll(getShapeSimilarWord(word, wordnum));
-        result.addAll(pinyinWordSimialrWordList.get(word));
+
+        for (String py : pinyinList) {
+            result.addAll(pinyinWordSimialrWordList.get(py));
+        }
         return result;
     }
 
     public HashSet<String> getSimilarPhrase(String word) {
+        String[] pinyinList = Pinyin4jUtil.converterToSpell(word).split(",");
         HashSet<String> result = new HashSet<>();
-        result.addAll(pinyinPhraseSimialrWordList.get(word));
+//        result.addAll(getPronunSimilarWord(word, wordnum));
+//        result.addAll(getShapeSimilarWord(word, wordnum));
+
+        for (String py : pinyinList) {
+            result.addAll(pinyinPhraseSimialrWordList.get(py));
+        }
         return result;
     }
 
