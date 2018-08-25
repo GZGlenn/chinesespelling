@@ -1,33 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="764cd5b9-7fc2-4941-8a74-565f377e0511" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_belerweb_pinyin4j_2_5_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/data/SighanDataBean2.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/PrepareSigHanDataDriver.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestLanguageModel.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/LanguageModelManager2.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/TrieLMTree.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/util/Pinyin4jUtil.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resource/pinyin_similar_phrase.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resource/pinyin_similar_word.txt" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/basic_method.iml" afterPath="$PROJECT_DIR$/basic_method.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/data/FeatureData.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/data/FeatureData.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/data/SighanDataBean.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/data/SighanDataBean.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestDriver.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestDriver.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestWordSimilar.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestWordSimilar.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/LanguageModelManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/LanguageModelManager.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator2.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator2.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/model/MSMOReg.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/model/MSMOReg.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resource/pinyin_similar.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resource/pinyin_similar_thre_zero.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/resource/word_pinyin.txt" afterPath="" />
-    </list>
+    <list default="true" id="764cd5b9-7fc2-4941-8a74-565f377e0511" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -73,8 +47,8 @@
       <file leaf-file-name="SighanDataBean2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/data/SighanDataBean2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+            <state relative-caret-position="216">
+              <caret line="22" column="47" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="47" />
               <folding>
                 <element signature="e#944#945#0" expanded="true" />
                 <element signature="e#1000#1001#0" expanded="true" />
@@ -512,15 +486,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1535126176791</updated>
-      <workItem from="1535126177990" duration="37572000" />
+      <workItem from="1535126177990" duration="38603000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37572000" />
+    <option name="totallyTimeSpent" value="38603000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -543,7 +517,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44004282" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44004282" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -953,8 +927,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/data/SighanDataBean2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        <state relative-caret-position="216">
+          <caret line="22" column="47" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="47" />
           <folding>
             <element signature="e#944#945#0" expanded="true" />
             <element signature="e#1000#1001#0" expanded="true" />
