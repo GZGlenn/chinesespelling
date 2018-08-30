@@ -2,6 +2,7 @@ package com.pr.nlp.data;
 
 import com.alibaba.fastjson.JSONObject;
 import com.hankcs.hanlp.HanLP;
+import com.hankcs.hanlp.seg.common.Term;
 import com.hankcs.hanlp.tokenizer.StandardTokenizer;
 import com.hankcs.hanlp.utility.SentencesUtil;
 import org.apache.commons.lang3.tuple.ImmutableTriple;
@@ -61,11 +62,11 @@ public class SighanDataBean2 implements Serializable {
         this.correctTriplet = correctTriplet;
     }
 
-    public void addCorrectTriplet(ImmutableTriple<Integer, String, String> triple) {
+    public void addCorrectTriplet(Triple<Integer, String, String> triple) {
         this.correctTriplet.add(triple);
     }
 
-    public void addCorrectTriplet(ArrayList<ImmutableTriple<Integer, String, String>> tripleList) {
+    public void addCorrectTriplet(ArrayList<Triple<Integer, String, String>> tripleList) {
         this.correctTriplet.addAll(tripleList);
     }
 
@@ -88,19 +89,24 @@ public class SighanDataBean2 implements Serializable {
             return "";
         }
 
-        System.out.println(this.getIdStr() + " ==> " + this.content);
 
         String correctContent = this.content;
+        System.out.println(content);
         int deltaLen = 0;
         for (Triple<Integer, String, String> triple : correctTriplet) {
-            System.out.println(triple.getLeft() + " ==> " + triple.getMiddle() + " ==> " + triple.getRight());
-            String prefix = correctContent.substring(0, Math.max(0, triple.getLeft() - 1 - deltaLen));
-            String posfix = correctContent.substring(triple.getLeft() + triple.getMiddle().length() - 1 - deltaLen, correctContent.length());
+            System.out.println(triple.getLeft() + " : " + triple.getMiddle() + " : " + triple.getRight());
+            System.out.println(Math.max(0, triple.getLeft() - deltaLen) + " : " + Math.max(0, triple.getLeft() + triple.getMiddle().length() - deltaLen) + " : " + correctContent.length());
+            String prefix = correctContent.substring(0, Math.max(0, triple.getLeft() - deltaLen));
+            String posfix = correctContent.substring(Math.max(0, triple.getLeft() + triple.getMiddle().length() - deltaLen), correctContent.length());
             deltaLen += triple.getMiddle().length() - triple.getRight().length();
+
             correctContent = prefix + triple.getRight() + posfix;
         }
 
         this.correctContent = correctContent;
+
+//        System.out.println(content + " ==> " + correctContent);
+
         return correctContent;
     }
 
@@ -147,7 +153,11 @@ public class SighanDataBean2 implements Serializable {
         SighanDataBean2 data = parseData(line);
         ArrayList<SighanDataBean2> result = new ArrayList<>();
 
-        List<String> sentenceList = SentencesUtil.toSentenceList(data.content);
+        if (data.getIdStr().equals("B2-3764-1")) {
+//            System.out.println(12313);
+        }
+
+        List<String> sentenceList = getSmallSentence(data.content);
         if (sentenceList.size() == 1) {
             result.add(data);
             return result;
@@ -156,19 +166,70 @@ public class SighanDataBean2 implements Serializable {
         else {
             int starLen = 0;
             for (int i = 0 ; i < sentenceList.size(); i++) {
+                int preLen = 0;
+                while(starLen + preLen < data.content.length() &&
+                        HanLP.segment("" + data.content.charAt(starLen + preLen)).get(0).nature.startsWith("w")) {
+                    preLen++;
+                }
+                starLen += preLen;
                 SighanDataBean2 tmpData = new SighanDataBean2(data.idStr + "#" + i, sentenceList.get(i));
+                if (preLen >= sentenceList.get(i).length()) {
+                    result.add(tmpData);
+                    continue;
+                }
                 ArrayList<Triple<Integer, String, String>> tripleList = new ArrayList<>();
                 for (Triple<Integer, String, String> triple : data.getCorrectTriplet()) {
-                    if (triple.getLeft() < starLen || triple.getLeft() > starLen + sentenceList.get(i).length()) continue;
+                    if (triple.getLeft() < starLen || triple.getLeft() >= starLen + sentenceList.get(i).length()) continue;
                     Triple<Integer, String, String> newTriplet = new ImmutableTriple<>(triple.getLeft() - starLen, triple.getMiddle(), triple.getRight());
                     tripleList.add(newTriplet);
                 }
 
                 tmpData.setCorrectTriplet(tripleList);
                 result.add(tmpData);
+                starLen += tmpData.content.length();
             }
+
+            return result;
         }
     }
+
+    private static ArrayList<String> getSmallSentence(String sentence) {
+        List<String> sentenceList = SentencesUtil.toSentenceList(sentence);
+        ArrayList<String> result = new ArrayList<>();
+        for (String str : sentenceList) {
+            List<Term> termList= HanLP.segment(str);
+            ArrayList<List<Term>> subSentence = new ArrayList<>();
+            RecursiveDivide(termList, subSentence);
+            for (List<Term> terms : subSentence) {
+                String subSen = "";
+                for (Term term : terms) {
+                    subSen += term.word;
+                }
+                result.add(subSen);
+            }
+        }
+
+        return result;
+    }
+
+    private static void RecursiveDivide(List<Term> data, ArrayList<List<Term>> result) {
+        if (data.size() < 10000) result.add(data);
+        else {
+            int leftLen = data.size() / 2;
+            List<Term> left = new ArrayList<>();
+            for (int i = 0 ; i < leftLen ; i++) {
+                left.add(data.get(i));
+            }
+            RecursiveDivide(left, result);
+
+            List<Term> right = new ArrayList<>();
+            for (int i = leftLen ; i < data.size() ; i++) {
+                right.add(data.get(i));
+            }
+            RecursiveDivide(right, result);
+        }
+    }
+
 
     @Override
     public String toString() {

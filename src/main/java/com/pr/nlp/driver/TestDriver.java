@@ -1,5 +1,7 @@
 package com.pr.nlp.driver;
 
+import com.hankcs.hanlp.HanLP;
+import com.hankcs.hanlp.corpus.synonym.SynonymHelper;
 import com.pr.nlp.data.SighanDataBean;
 import com.pr.nlp.method.BasicMethod2;
 import com.pr.nlp.method.BasicMethod3;
@@ -22,5 +24,6 @@ public class TestDriver {
         method.initLMManager(lmPath, lmTime);
         method.initSimCalculator(simPath, word2vecPath);
         method.train(trainPath);
+
     }
 }

@@ -3,9 +3,11 @@ package com.pr.nlp.method;
 import com.hankcs.hanlp.HanLP;
 import com.hankcs.hanlp.seg.common.Term;
 import com.hankcs.hanlp.utility.CharacterHelper;
+import com.hankcs.hanlp.utility.SentencesUtil;
 import com.pr.nlp.data.ChangeData;
 import com.pr.nlp.data.FeatureData;
 import com.pr.nlp.data.SighanDataBean2;
+import com.pr.nlp.manager.CandidatgeGenerator;
 import com.pr.nlp.manager.LanguageModelManager2;
 import com.pr.nlp.manager.TrieLMTree;
 import com.pr.nlp.manager.WordSimilarCalculator;
@@ -32,7 +34,7 @@ public class BasicMethod3 {
     private WordSimilarCalculator similarCalculator;
     private MSMOReg model;
 
-    private int winsize = 5;
+    private int maxChangeOneWord = 15;
     private int maxChange = 1000;
 
     private double pmiThre = -10000;
@@ -66,13 +68,6 @@ public class BasicMethod3 {
         return outputRoot;
     }
 
-    public int getWinsize() {
-        return winsize;
-    }
-
-    public void setWinsize(int winsize) {
-        this.winsize = winsize;
-    }
 
     public void train(String trainFile) {
 
@@ -80,7 +75,7 @@ public class BasicMethod3 {
         HashMap<String, SighanDataBean2> trainData = readFileData(trainFile);
 
         // create more sample
-        HashMap<String, ArrayList<String>> candidateMap = createCandidate(trainData, maxChange);
+        HashMap<String, ArrayList<String>> candidateMap = createCandidate2(trainData);
 
         // get feature
         HashMap<String, ArrayList<FeatureData>> data = getFeature(trainData, candidateMap);
@@ -97,7 +92,7 @@ public class BasicMethod3 {
         HashMap<String, SighanDataBean2> testData = readFileData(testFile);
 
         // create more sample
-        HashMap<String, ArrayList<String>> candidateMap = createCandidate(testData, maxChange);
+        HashMap<String, ArrayList<String>> candidateMap = createCandidate2(testData);
 
         // get feature
         HashMap<String, ArrayList<FeatureData>> data = getFeature(testData, candidateMap);
@@ -149,7 +144,7 @@ public class BasicMethod3 {
         sighanList.put("-1", new SighanDataBean2("-1", input));
 
         // create more sample
-        HashMap<String, ArrayList<String>> candidateMap = createCandidate(sighanList, maxChange);
+        HashMap<String, ArrayList<String>> candidateMap = createCandidate2(sighanList);
 
         // get feature
         HashMap<String, ArrayList<FeatureData>> data = getFeature(sighanList, candidateMap);
@@ -176,13 +171,16 @@ public class BasicMethod3 {
         for (String filePath : filePathes) {
             ArrayList<String> lines = FileUtil.readFileByLine(filePath);
             for (String line : lines) {
-                SighanDataBean2 dataBean = SighanDataBean2.parseData(line);
-                if (!dataList.containsKey(dataBean.getIdStr())) {
-                    dataList.put(dataBean.getIdStr(), dataBean);
-                } else {
-                    SighanDataBean2 oldData = dataList.get(dataBean.getIdStr());
-                    oldData.addCorrectTriplet(dataBean.getCorrectTriplet());
-                    dataList.put(dataBean.getIdStr(), oldData);
+                ArrayList<SighanDataBean2> dataBeanList = SighanDataBean2.parseData2(line);
+//                if (!dataBeanList.get(0).getIdStr().startsWith("B2-4028-1")) continue;
+                for (SighanDataBean2 dataBean : dataBeanList) {
+                    if (!dataList.containsKey(dataBean.getIdStr())) {
+                        dataList.put(dataBean.getIdStr(), dataBean);
+                    } else {
+                        SighanDataBean2 oldData = dataList.get(dataBean.getIdStr());
+                        oldData.addCorrectTriplet(dataBean.getCorrectTriplet());
+                        dataList.put(dataBean.getIdStr(), oldData);
+                    }
                 }
             }
         }
@@ -195,11 +193,47 @@ public class BasicMethod3 {
         return dataList;
     }
 
+
+    private HashMap<String, ArrayList<String>> createCandidate2(HashMap<String, SighanDataBean2> trainData) {
+        HashMap<String, ArrayList<String>> result = new HashMap<>();
+        for (HashMap.Entry<String, SighanDataBean2> entry : trainData.entrySet()) {
+            System.out.println("input :" + entry.getValue().getContent());
+            String content = entry.getValue().getContent();
+            ArrayList<String> candidateList = CandidatgeGenerator.getCandidate(content, maxChangeOneWord, maxChange, lmManager, similarCalculator);
+            result.put(entry.getKey(), candidateList);
+            for (String candidate : candidateList) {
+                System.out.println("candidate : " + candidate);
+            }
+        }
+        return result;
+    }
+
+
+
     // create candidate by pmi and lm
-    private HashMap<String, ArrayList<String>> createCandidate(HashMap<String, SighanDataBean2> trainData, int limit) {
+    private HashMap<String, ArrayList<String>> createCandidate(HashMap<String, SighanDataBean2> trainData, int limit, int winsizeLimit) {
+        Comparator<Pair<String, Float>> wordScoreComparator = new Comparator<Pair<String, Float>>() {
+            @Override
+            public int compare(Pair<String, Float> o1, Pair<String, Float> o2) {
+                if (o2.getValue() > o1.getValue()) return 1;
+                else if (o2.getValue() == o1.getValue()) return 0;
+                else return -1;
+            }
+        };
+
         HashMap<String, ArrayList<String>> candidateList = new HashMap<>();
         for (HashMap.Entry<String, SighanDataBean2> sighanData: trainData.entrySet()) {
+            System.out.println("check : " + sighanData.getValue().getContent() + " ==> " + sighanData.getValue().getCorrectContent());
             List<Term> termList = HanLP.segment(sighanData.getValue().getContent());
+            int cutLen = termList.size();
+            int curWinSizeLimit = winsizeLimit;
+            while (cutLen > 10) {
+                curWinSizeLimit = curWinSizeLimit / 2;
+                cutLen = cutLen / 2;
+            }
+
+            System.out.println(curWinSizeLimit);
+
             ArrayList<Triple<Integer, Integer, List<String>>> changeAllList = new ArrayList<>();
             int start = 0;
             for (int i = 0 ; i < termList.size() ; i++) {
@@ -208,19 +242,32 @@ public class BasicMethod3 {
                     start += term.word.length();
                     continue;
                 }
-                else if (!similarCalculator.isContainWord(term.word)) {
+                else if (!similarCalculator.isContainWord(term.word) && term.word.length() <= 3) {
                     char[] chars = term.word.toCharArray();
-                    int tmpStart = start;
                     for (int j = 0 ; j < chars.length; j++) {
                         HashSet<String> similarWords = similarCalculator.getSimilarWord(chars[j] + "");
                         ArrayList<String> addWords = new ArrayList<>();
                         for (String str : similarWords) {
-                            if (lmManager.isContain(str)) addWords.add(str);
+                            if (lmManager.isContain(str) && lmManager.getUnigram(str) > -6) {
+                                addWords.add(str);
+                            }
                         }
-                        Triple triple = new ImmutableTriple(tmpStart, 1, new ArrayList<>(addWords));
-                        changeAllList.add(triple);
+
+                        if (addWords.size() != 0 && addWords.size() <= curWinSizeLimit) {
+                            Triple triple = new ImmutableTriple(start + j, 1, new ArrayList<>(addWords));
+                            changeAllList.add(triple);
+                        } else if (addWords.size() != 0) {
+                            ArrayList<Pair<String, Float>> scoreAddWord = new ArrayList<>();
+                            for (String str : addWords) scoreAddWord.add(new ImmutablePair<>(str, lmManager.getUnigram(str)));
+                            scoreAddWord.sort(wordScoreComparator);
+                            ArrayList<String> result = new ArrayList<>();
+                            for (int k = 0 ; k < curWinSizeLimit ; k++) {
+                                result.add(scoreAddWord.get(k).getKey());
+                            }
+                            Triple triple = new ImmutableTriple(start + j, 1, new ArrayList<>(result));
+                            changeAllList.add(triple);
+                        }
                     }
-                    tmpStart++;
                 }
                 else {
                     String beforeWord = "", afterWord = "";
@@ -243,8 +290,21 @@ public class BasicMethod3 {
                         start += term.word.length();
                         continue;
                     }
-                    Triple triple = new ImmutableTriple(start, term.word.length(), new ArrayList<>(addWords));
-                    changeAllList.add(triple);
+                    else if (addWords.size() <= curWinSizeLimit) {
+                        Triple triple = new ImmutableTriple(start, term.word.length(), new ArrayList<>(addWords));
+                        changeAllList.add(triple);
+                    }
+                    else {
+                        ArrayList<Pair<String, Float>> scoreAddWord = new ArrayList<>();
+                        for (String str : addWords) scoreAddWord.add(new ImmutablePair<>(str, lmManager.getUnigram(str)));
+                        scoreAddWord.sort(wordScoreComparator);
+                        ArrayList<String> result = new ArrayList<>();
+                        for (int k = 0 ; k < curWinSizeLimit ; k++) {
+                            result.add(scoreAddWord.get(k).getKey());
+                        }
+                        Triple triple = new ImmutableTriple(start, term.word.length(), new ArrayList<>(result));
+                        changeAllList.add(triple);
+                    }
                 }
 
                 start += term.word.length();
@@ -287,34 +347,6 @@ public class BasicMethod3 {
 
     // lm model get top 20
     private ArrayList<String> mergeAndBasicChoose(SighanDataBean2 data, ArrayList<Triple<Integer, Integer, List<String>>> changeList, int limit) {
-//
-//        double originScore = lmManager.calLM(data.getCorrectContent());
-//
-//        ArrayList<String> mergeResult = new ArrayList<>();
-//        RecursiveReplace2(data.getContent(), 0, changeList, 0, mergeResult);
-//
-//        // viterbi cal lmscore
-//        TrieLMTree lmTree = new TrieLMTree();
-//        ArrayList<Pair<String, Double>> candidateAndScoreList = new ArrayList<>();
-//        Comparator comparator = new Comparator<Pair<String, Double>>() {
-//            @Override
-//            public int compare(Pair<String, Double> o1, Pair<String, Double> o2) {
-//                if (o1.getValue() - o2.getValue() > 0) return 1;
-//                else return -1;
-//            }
-//        };
-//
-//
-//        for (String string : mergeResult) {
-//            double score = lmTree.calLMScore(string, lmManager);
-//            if (score < originScore) continue;
-//            if (candidateAndScoreList.size() < limit) candidateAndScoreList.add(new ImmutablePair<>(string, score));
-//            else if (candidateAndScoreList.get(candidateAndScoreList.size() - 1).getRight() == score) candidateAndScoreList.add(new ImmutablePair<>(string, score));
-//            else if (candidateAndScoreList.get(candidateAndScoreList.size() - 1).getRight() < score) {
-//                candidateAndScoreList.set(candidateAndScoreList.size() - 1, new ImmutablePair<>(string, score));
-//            }
-//            candidateAndScoreList.sort(comparator);
-//        }
 
         ArrayList<Pair<String, Double>> mergeResult = new ArrayList<>();
         TrieLMTree lmTree = new TrieLMTree();
@@ -326,40 +358,12 @@ public class BasicMethod3 {
                 else return -1;
             }
         };
-        double originScore = lmTree.calLMScore(data.getContent(), lmManager);
         double originScore2 = lmManager.calLM(data.getContent());
-        double correctScore = lmManager.calLM(data.getCorrectContent());
         RecursiveReplace(data.getContent(), 0, changeList, 0, mergeResult, lmTree, comparator, originScore2, limit);
         ArrayList<String> result = new ArrayList<>();
         for (Pair<String, Double> pair : mergeResult) result.add(pair.getKey());
         return result;
     }
-
-
-    private void RecursiveReplace2(String prevStr, int lastChange,
-                                  ArrayList<Triple<Integer, Integer, List<String>>> replaceList,
-                                  int curIndex,
-                                  ArrayList<String> list) {
-        if (curIndex >= replaceList.size())
-            return;
-        Triple<Integer, Integer, List<String>> triplet = replaceList.get(curIndex);
-        if (triplet.getLeft() <= lastChange) {
-            RecursiveReplace2(prevStr, lastChange, replaceList, curIndex + 1, list);
-        }
-        else {
-            RecursiveReplace2(prevStr, lastChange, replaceList, curIndex + 1, list);
-            char[] charBuffer = prevStr.toCharArray();
-            for (String target: triplet.getRight()) {
-                for (int i = 0; i < triplet.getMiddle(); ++i) {
-                    charBuffer[triplet.getLeft() + i] = target.charAt(i);
-                }
-                String curStr = String.valueOf(charBuffer);
-                list.add(curStr);
-                RecursiveReplace2(curStr, triplet.getLeft() + triplet.getMiddle() - 1, replaceList, curIndex + 1, list);
-            }
-        }
-    }
-
 
     private void RecursiveReplace(String prevStr, int lastChange,
                                   ArrayList<Triple<Integer, Integer, List<String>>> replaceList,

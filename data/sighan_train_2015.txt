@@ -807,7 +807,7 @@
 {"content":"直到我大概到了高中，才有慢慢的接触和认识到这些高科技的东西。","correctStr":"慢慢地","errorStr":"慢慢的","idStr":"B2-3803-1","location":15}
 {"content":"最近我的弟弟也是被公司宣布「无薪假」了。","correctStr":"宣布","errorStr":"宣布","idStr":"B2-3703-1","location":13}
 {"content":"在中午，天气很日，日子过得很快，我一点著急。","correctStr":"很热","errorStr":"很日","idStr":"A2-0816-2","location":8}
-{"content":"针对于宠物出租我个人非常同意，因为省时间天天去照顾，而且省钱天天为牠吃，有出租宠物的机会当然非常好，想念牠的时候就可以带回家，然后不想养或著工作忙碌的时候没办法照顾，就可以送走。","correctStr":" ","errorStr":"天天喂牠吃","idStr":"B2-2427-1","location":21}
+{"content":"针对于宠物出租我个人非常同意，因为省时间天天去照顾，而且省钱天天为牠吃，有出租宠物的机会当然非常好，想念牠的时候就可以带回家，然后不想养或著工作忙碌的时候没办法照顾，就可以送走。","correctStr":"天天喂牠吃","errorStr":"天为牠吃","idStr":"B2-2427-1","location":21}
 {"content":"那时候，应为校长觉得他获改，所以学生会受到很严重的制裁。","correctStr":"活该","errorStr":"获改","idStr":"B2-4357-2","location":12}
 {"content":"小小说她很想跟他一起看电影，可是她有很多功课她还没作所以她的父母今天可能不被她出去。","correctStr":"还没做","errorStr":"还没作","idStr":"A2-0312-1","location":26}
 {"content":"长爱文也高兴得很：「恭喜，恭喜！我也想去，可是我准备考试，最近有点茫，我打算者写一些工课，所以我明天不知道能不能参加。","correctStr":"打算著","errorStr":"打算者","idStr":"A2-0279-2","location":39}
@@ -1480,7 +1480,7 @@
 {"content":"我也知道老师很生气，因为我常常赤道。","correctStr":"迟到","errorStr":"赤道","idStr":"A2-2990-2","location":16}
 {"content":"我是您附近的邻区王大华。再说、我是一个代表所有的邻去给您写这封信。","correctStr":"邻居","errorStr":"邻去","idStr":"B2-4199-1","location":26}
 {"content":"针对人生关点上的看法应概给我门小孩子一个自然生活，快乐成长。不管他门太紧，让他门有自我空间处理他门问题。","correctStr":"他们","errorStr":"他门","idStr":"B2-4392-1","location":34}
-{"content":"一天到晚在自之的职场辛苦地工作回到家没有人来迎他会使他感到凄凉。","correctStr":"自己","errorStr":"自之","idStr":"B2-2438-2","location":7}
+{"content":"一天到晚在自之的职场辛苦地工作,回到家没有人来迎他会使他感到凄凉。","correctStr":"自己","errorStr":"自之","idStr":"B2-2438-2","location":7}
 {"content":"他有没有希望有一天他不需要上班，会带在家里，做他爱做的事情。","correctStr":"她不需要上班","errorStr":"他不需要上班","idStr":"B2-3666-4","location":24}
 {"content":"往往在一刹那的冲动下会想不应该向的事儿、甚至于会讲出来不应该讲的话。","correctStr":"不应该想的事儿","errorStr":"不应该向的事儿","idStr":"B2-1933-3","location":16}
 {"content":"还没说道还很小的小朋友，天天没好好的念书，一下课就马上上网，连吃饭和洗澡都不要做。","correctStr":"好好地","errorStr":"好好的","idStr":"B2-3813-4","location":18}

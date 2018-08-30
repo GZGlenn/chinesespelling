@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="764cd5b9-7fc2-4941-8a74-565f377e0511" name="Default" comment="" />
+    <list default="true" id="30b0b9a3-2c2b-41f1-a656-e672c045810e" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestSentenceSegment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/CandidatgeGenerator.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/util/NLPUtil.java" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/data/sighan_train_2015.txt" afterPath="$PROJECT_DIR$/data/sighan_train_2015.txt" />
+      <change beforePath="$PROJECT_DIR$/model/smoreg.model" afterPath="$PROJECT_DIR$/model/smoreg.model" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/data/SighanDataBean2.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/data/SighanDataBean2.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestDriver.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestDriver.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestLanguageModel.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestLanguageModel.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/LanguageModelManager2.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/LanguageModelManager2.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java" afterPath="$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resource/pinyin_similar_phrase.txt" afterPath="$PROJECT_DIR$/src/main/resource/pinyin_similar_phrase.txt" />
+    </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -12,21 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TrainDriver.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TrainDriver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="TestDriver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestDriver.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+              <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -35,116 +42,28 @@
       <file leaf-file-name="BasicMethod3.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3060">
-              <caret line="178" column="65" lean-forward="false" selection-start-line="178" selection-start-column="65" selection-end-line="178" selection-end-column="65" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SighanDataBean2.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/data/SighanDataBean2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="438">
-              <caret line="170" column="5" lean-forward="true" selection-start-line="170" selection-start-column="5" selection-end-line="170" selection-end-column="5" />
-              <folding>
-                <element signature="e#944#945#0" expanded="true" />
-                <element signature="e#1000#1001#0" expanded="true" />
-                <element signature="e#1267#1268#0" expanded="true" />
-                <element signature="e#1304#1305#0" expanded="true" />
-                <element signature="e#1426#1427#0" expanded="true" />
-                <element signature="e#1464#1465#0" expanded="true" />
-                <element signature="e#1524#1525#0" expanded="true" />
-                <element signature="e#1576#1577#0" expanded="true" />
-                <element signature="e#1810#1811#0" expanded="true" />
-                <element signature="e#1857#1858#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StandardTokenizer.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/hankcs/hanlp/portable-1.6.2/hanlp-portable-1.6.2.jar!/com/hankcs/hanlp/tokenizer/StandardTokenizer.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-              <folding>
-                <marker date="1534586134521" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1534586134521" expanded="false" signature="150:274" ph="..." />
-                <marker date="1534586134521" expanded="true" signature="403:410" ph="{}" />
-                <marker date="1534586134521" expanded="false" signature="461:472" ph=" { " />
-                <marker date="1534586134521" expanded="false" signature="511:517" ph=" }" />
-                <marker date="1534586134521" expanded="false" signature="568:579" ph=" { " />
-                <marker date="1534586134521" expanded="false" signature="604:610" ph=" }" />
-                <marker date="1534586134521" expanded="false" signature="672:683" ph=" { " />
-                <marker date="1534586134521" expanded="false" signature="717:723" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Segment.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/com/hankcs/hanlp/portable-1.6.2/hanlp-portable-1.6.2.jar!/com/hankcs/hanlp/seg/Segment.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7182">
-              <caret line="425" column="52" lean-forward="false" selection-start-line="425" selection-start-column="24" selection-end-line="425" selection-end-column="52" />
-              <folding>
-                <marker date="1534586134521" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1534586134521" expanded="false" signature="144:1123" ph="..." />
-                <marker date="1534586134521" expanded="true" signature="1223:1230" ph="{}" />
-                <marker date="1534586134521" expanded="true" signature="1318:3804" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="3898:4076" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="4169:5380" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="5467:8244" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="8357:9188" ph="{...}" />
-                <marker date="1534586134521" expanded="false" signature="8789:8887" ph="hit(begin, end, value) → {" />
-                <marker date="1534586134521" expanded="false" signature="9105:9128" ph="}" />
-                <marker date="1534586134521" expanded="true" signature="9282:9784" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="9885:12135" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="12233:12835" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="12876:15627" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="15668:15857" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="15913:16239" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="16353:16429" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="16485:16691" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="16754:16826" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="16883:16994" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="17052:17164" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="17229:17348" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="17408:17486" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="17553:17713" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="17780:17901" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="17966:18085" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="18135:18200" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="18269:18353" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="18420:18734" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="18792:18995" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="19055:19132" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="19170:19756" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="19375:19538" ph="{...}" />
-                <marker date="1534586134521" expanded="true" signature="19566:19750" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestLanguageModel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestLanguageModel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+            <state relative-caret-position="126">
+              <caret line="32" column="28" lean-forward="false" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FeatureData.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/data/FeatureData.java">
+      <file leaf-file-name="LanguageModelManager2.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/LanguageModelManager2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="954">
-              <caret line="78" column="51" lean-forward="false" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
+            <state relative-caret-position="216">
+              <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WordSimilarCalculator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -161,10 +80,19 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>CalcLanguageModelFeature</find>
-      <find>GetCandidate</find>
-      <find>A2-2049-1</find>
-      <find>System</find>
+      <find>欸？</find>
+      <find>的职场辛苦地工作回到家没有人来迎他会使他感到</find>
+      <find>郿</find>
+      <find>这</find>
+      <find>一天到晚在自之的职场辛苦地工作回到家没有人来</find>
+      <find>所以我留一张纸告诉妳</find>
+      <find>、</find>
+      <find>ArrayList&lt;Pair&lt;Integer, ArrayList&lt;String&gt;&gt;&gt;</find>
+      <find>modifiedSegmentList</find>
+      <find>我们提案傱早上９点上班到晚上６点下班</find>
+      <find>RecursiveReplace</find>
+      <find>dian</find>
+      <find>Sys</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -178,23 +106,17 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/util/Pinyin4jUtil.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestWordSimilar.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/LanguageModelManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator.java" />
-        <option value="$USER_HOME$/下载/NLPCorrect/NLPCorrector/src/main/java/com/tencent/dp/nlp/WordCorrector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/data/FeatureData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/TrieLMTree.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestLanguageModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/model/MSMOReg.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/LanguageModelManager2.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestDriver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/data/SighanDataBean.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/PrepareSigHanDataDriver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestSentenceSegment.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/data/SighanDataBean3.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/data/SighanDataBean2.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestLanguageModel.java" />
+        <option value="$PROJECT_DIR$/data/sighan_train_2015.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/util/NLPUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestDriver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/CandidatgeGenerator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/LanguageModelManager2.java" />
       </list>
     </option>
   </component>
@@ -204,12 +126,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="292" />
@@ -233,7 +154,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -244,21 +166,6 @@
             <path>
               <item name="chinesespelling" type="b2602c69:ProjectViewProjectNode" />
               <item name="chinesespelling" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chinesespelling" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chinesespelling" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chinesespelling" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chinesespelling" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chinesespelling" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chinesespelling" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -273,14 +180,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chinesespelling" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chinesespelling" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="chinesespelling" type="b2602c69:ProjectViewProjectNode" />
@@ -295,46 +194,23 @@
               <item name="chinesespelling" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="manager" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chinesespelling" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chinesespelling" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="method" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chinesespelling" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chinesespelling" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="svm" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chinesespelling" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chinesespelling" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chinesespelling" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chinesespelling" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resource" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="chinesespelling" type="58d84e3e:PackageViewProjectNode" />
+              <item name="basic_method" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -344,9 +220,6 @@
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.pr.nlp.data" />
-      <recent name="com.pr.nlp.driver" />
-      <recent name="com.pr.nlp.manager" />
-      <recent name="com.pr.nlp.util" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resource" />
@@ -380,9 +253,9 @@
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="com.pr.nlp.driver.TestDriver" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
@@ -410,14 +283,14 @@
       <module name="basic_method" />
       <envs />
     </configuration>
-    <configuration name="TestWordSimilar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="TestSentenceSegment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="com.pr.nlp.driver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="com.pr.nlp.driver.TestWordSimilar" />
+      <option name="MAIN_CLASS_NAME" value="com.pr.nlp.driver.TestSentenceSegment" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -504,7 +377,7 @@
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Application.TestWordSimilar" />
+      <item index="0" class="java.lang.String" itemvalue="Application.TestSentenceSegment" />
       <item index="1" class="java.lang.String" itemvalue="Application.TestDriver" />
       <item index="2" class="java.lang.String" itemvalue="Application.TestLanguageModel" />
     </list>
@@ -512,7 +385,7 @@
       <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Application.TestDriver" />
         <item index="1" class="java.lang.String" itemvalue="Application.TestLanguageModel" />
-        <item index="2" class="java.lang.String" itemvalue="Application.TestWordSimilar" />
+        <item index="2" class="java.lang.String" itemvalue="Application.TestSentenceSegment" />
       </list>
     </recent_temporary>
   </component>
@@ -529,18 +402,19 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="764cd5b9-7fc2-4941-8a74-565f377e0511" name="Default" comment="" />
-      <created>1535126176791</created>
+      <changelist id="30b0b9a3-2c2b-41f1-a656-e672c045810e" name="Default" comment="" />
+      <created>1535212849205</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1535126176791</updated>
-      <workItem from="1535126177990" duration="38603000" />
-      <workItem from="1535212795694" duration="26000" />
+      <updated>1535212849205</updated>
+      <workItem from="1535212850317" duration="38800000" />
+      <workItem from="1535645318631" duration="57000" />
+      <workItem from="1535645389213" duration="1045000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38629000" />
+    <option name="totallyTimeSpent" value="39902000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -548,31 +422,31 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32984003" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3875803" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43254817" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25261998" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25537783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993576" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44004282" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,532 +460,387 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java</url>
-          <line>85</line>
+          <line>319</line>
           <properties />
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java</url>
-          <line>88</line>
+          <line>375</line>
           <properties />
-          <option name="timeStamp" value="11" />
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java</url>
-          <line>213</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/CandidatgeGenerator.java</url>
+          <line>134</line>
           <properties />
-          <option name="timeStamp" value="76" />
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java</url>
-          <line>89</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator.java</url>
+          <line>99</line>
           <properties />
-          <option name="timeStamp" value="94" />
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java</url>
-          <line>90</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator.java</url>
+          <line>100</line>
           <properties />
-          <option name="timeStamp" value="95" />
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java</url>
-          <line>265</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator.java</url>
+          <line>127</line>
           <properties />
-          <option name="timeStamp" value="113" />
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java</url>
-          <line>259</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator.java</url>
+          <line>133</line>
           <properties />
-          <option name="timeStamp" value="114" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java</url>
-          <line>225</line>
-          <properties />
-          <option name="timeStamp" value="115" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java</url>
-          <line>238</line>
-          <properties />
-          <option name="timeStamp" value="119" />
+          <option name="timeStamp" value="52" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="120" />
+      <option name="time" value="53" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="right" />
-      </configuration>
-    </watches-manager>
+    <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TrainDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+        <state relative-caret-position="360">
+          <caret line="28" column="1" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3060">
-          <caret line="178" column="65" lean-forward="false" selection-start-line="178" selection-start-column="65" selection-end-line="178" selection-end-column="65" />
+        <state relative-caret-position="3150">
+          <caret line="201" column="0" lean-forward="false" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/CandidatgeGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3204">
+          <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#calPMIInThreeWin#0;class#CandidatgeGenerator#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/hankcs/hanlp/portable-1.6.2/hanlp-portable-1.6.2.jar!/com/hankcs/hanlp/tokenizer/StandardTokenizer.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-          <folding>
-            <marker date="1534586134521" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1534586134521" expanded="false" signature="150:274" ph="..." />
-            <marker date="1534586134521" expanded="true" signature="403:410" ph="{}" />
-            <marker date="1534586134521" expanded="false" signature="461:472" ph=" { " />
-            <marker date="1534586134521" expanded="false" signature="511:517" ph=" }" />
-            <marker date="1534586134521" expanded="false" signature="568:579" ph=" { " />
-            <marker date="1534586134521" expanded="false" signature="604:610" ph=" }" />
-            <marker date="1534586134521" expanded="false" signature="672:683" ph=" { " />
-            <marker date="1534586134521" expanded="false" signature="717:723" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/hankcs/hanlp/portable-1.6.2/hanlp-portable-1.6.2.jar!/com/hankcs/hanlp/seg/Segment.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7182">
-          <caret line="425" column="52" lean-forward="false" selection-start-line="425" selection-start-column="24" selection-end-line="425" selection-end-column="52" />
-          <folding>
-            <marker date="1534586134521" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1534586134521" expanded="false" signature="144:1123" ph="..." />
-            <marker date="1534586134521" expanded="true" signature="1223:1230" ph="{}" />
-            <marker date="1534586134521" expanded="true" signature="1318:3804" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="3898:4076" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="4169:5380" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="5467:8244" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="8357:9188" ph="{...}" />
-            <marker date="1534586134521" expanded="false" signature="8789:8887" ph="hit(begin, end, value) → {" />
-            <marker date="1534586134521" expanded="false" signature="9105:9128" ph="}" />
-            <marker date="1534586134521" expanded="true" signature="9282:9784" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="9885:12135" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="12233:12835" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="12876:15627" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="15668:15857" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="15913:16239" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="16353:16429" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="16485:16691" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="16754:16826" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="16883:16994" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="17052:17164" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="17229:17348" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="17408:17486" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="17553:17713" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="17780:17901" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="17966:18085" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="18135:18200" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="18269:18353" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="18420:18734" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="18792:18995" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="19055:19132" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="19170:19756" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="19375:19538" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="19566:19750" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestLanguageModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/data/FeatureData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
-          <caret line="78" column="51" lean-forward="true" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/data/SighanDataBean2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="22" column="47" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="22" selection-end-column="47" />
-          <folding>
-            <element signature="e#944#945#0" expanded="true" />
-            <element signature="e#1000#1001#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1304#1305#0" expanded="true" />
-            <element signature="e#1426#1427#0" expanded="true" />
-            <element signature="e#1464#1465#0" expanded="true" />
-            <element signature="e#1524#1525#0" expanded="true" />
-            <element signature="e#1576#1577#0" expanded="true" />
-            <element signature="e#1810#1811#0" expanded="true" />
-            <element signature="e#1857#1858#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="40" column="57" lean-forward="false" selection-start-line="40" selection-start-column="57" selection-end-line="40" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/util/StringUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/util/Pinyin4jUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="37" column="47" lean-forward="true" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resource/pinyin_similar_thre_zero.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/resource/pinyin_similar.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/resource/word_pinyin.txt" />
-    <entry file="file://$PROJECT_DIR$/src/main/resource/pinyin_similar_phrase.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="21" lean-forward="true" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/hankcs/hanlp/portable-1.6.2/hanlp-portable-1.6.2.jar!/com/hankcs/hanlp/collection/trie/DoubleArrayTrie.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="37" column="43" lean-forward="true" selection-start-line="37" selection-start-column="43" selection-end-line="37" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestWordSimilar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/下载/NLPCorrect/NLPCorrector/src/main/java/com/tencent/dp/nlp/Corrector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1620">
-          <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/下载/NLPCorrect/NLPCorrector/src/main/java/com/tencent/dp/nlp/LanguageModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="329" column="37" lean-forward="true" selection-start-line="329" selection-start-column="37" selection-end-line="329" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/下载/NLPCorrect/NLPCorrector/src/main/java/com/tencent/dp/nlp/WordCorrector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="360" column="64" lean-forward="false" selection-start-line="360" selection-start-column="40" selection-end-line="360" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/ArrayList.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="440" column="19" lean-forward="false" selection-start-line="440" selection-start-column="19" selection-end-line="440" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-148">
-          <caret line="26" column="49" lean-forward="false" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/TrieLMTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="29" column="18" lean-forward="false" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#529#530#0" expanded="false" />
-            <element signature="e#567#568#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/DataPrapareDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TrainDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/nz/ac/waikato/cms/weka/weka-dev/3.9.2/weka-dev-3.9.2.jar!/weka/core/Debug.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="153" column="26" lean-forward="false" selection-start-line="153" selection-start-column="26" selection-end-line="153" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/nz/ac/waikato/cms/weka/weka-dev/3.9.2/weka-dev-3.9.2.jar!/weka/classifiers/functions/SMOreg.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1871">
-          <caret line="209" column="79" lean-forward="false" selection-start-line="209" selection-start-column="78" selection-end-line="209" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/LanguageModelManager2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="80" column="21" lean-forward="true" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="21" />
-          <folding>
-            <element signature="e#647#648#0" expanded="false" />
-            <element signature="e#680#681#0" expanded="false" />
-            <element signature="e#4342#4343#0" expanded="false" />
-            <element signature="e#4391#4392#0" expanded="false" />
-            <element signature="e#5955#5956#0" expanded="false" />
-            <element signature="e#6032#6033#0" expanded="false" />
-            <element signature="e#6076#6077#0" expanded="false" />
-            <element signature="e#6137#6138#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/smoreg.model">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="32" lean-forward="false" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
+        <state relative-caret-position="504">
+          <caret line="36" column="5" lean-forward="false" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/sighan_train_2015.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="93" lean-forward="false" selection-start-line="5" selection-start-column="84" selection-end-line="5" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/LanguageModelManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2952">
-          <caret line="188" column="39" lean-forward="false" selection-start-line="188" selection-start-column="39" selection-end-line="188" selection-end-column="39" />
-          <folding>
-            <element signature="e#654#655#0" expanded="true" />
-            <element signature="e#687#688#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/PrepareSigHanData.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/PrepareSigHanDataDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="21006">
+          <caret line="1167" column="98" lean-forward="false" selection-start-line="1167" selection-start-column="98" selection-end-line="1167" selection-end-column="107" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/model/MSMOReg.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resource/pinyin_similar_phrase2.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/String.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="704" column="18" lean-forward="false" selection-start-line="704" selection-start-column="18" selection-end-line="704" selection-end-column="18" />
+        <state relative-caret-position="432">
+          <caret line="24" column="24" lean-forward="true" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/data/SighanDataBean.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="130" column="17" lean-forward="true" selection-start-line="130" selection-start-column="17" selection-end-line="130" selection-end-column="17" />
-          <folding>
-            <element signature="e#1068#1069#0" expanded="true" />
-            <element signature="e#1115#1116#0" expanded="true" />
-            <element signature="e#1467#1468#0" expanded="true" />
-            <element signature="e#1504#1505#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/data/FeatureData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="954">
-          <caret line="78" column="51" lean-forward="false" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestLanguageModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="44" lean-forward="false" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        <state relative-caret-position="360">
+          <caret line="28" column="1" lean-forward="false" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3060">
-          <caret line="178" column="65" lean-forward="false" selection-start-line="178" selection-start-column="65" selection-end-line="178" selection-end-column="65" />
+        <state relative-caret-position="3150">
+          <caret line="201" column="0" lean-forward="false" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/CandidatgeGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3096">
+          <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#calPMIInThreeWin#0;class#CandidatgeGenerator#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/hankcs/hanlp/portable-1.6.2/hanlp-portable-1.6.2.jar!/com/hankcs/hanlp/tokenizer/StandardTokenizer.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="27" column="28" lean-forward="false" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-          <folding>
-            <marker date="1534586134521" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1534586134521" expanded="false" signature="150:274" ph="..." />
-            <marker date="1534586134521" expanded="true" signature="403:410" ph="{}" />
-            <marker date="1534586134521" expanded="false" signature="461:472" ph=" { " />
-            <marker date="1534586134521" expanded="false" signature="511:517" ph=" }" />
-            <marker date="1534586134521" expanded="false" signature="568:579" ph=" { " />
-            <marker date="1534586134521" expanded="false" signature="604:610" ph=" }" />
-            <marker date="1534586134521" expanded="false" signature="672:683" ph=" { " />
-            <marker date="1534586134521" expanded="false" signature="717:723" ph=" }" />
-          </folding>
+        <state relative-caret-position="504">
+          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/hankcs/hanlp/portable-1.6.2/hanlp-portable-1.6.2.jar!/com/hankcs/hanlp/seg/Segment.class">
+    <entry file="file://$PROJECT_DIR$/data/sighan_train_2015.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7182">
-          <caret line="425" column="52" lean-forward="false" selection-start-line="425" selection-start-column="24" selection-end-line="425" selection-end-column="52" />
-          <folding>
-            <marker date="1534586134521" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1534586134521" expanded="false" signature="144:1123" ph="..." />
-            <marker date="1534586134521" expanded="true" signature="1223:1230" ph="{}" />
-            <marker date="1534586134521" expanded="true" signature="1318:3804" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="3898:4076" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="4169:5380" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="5467:8244" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="8357:9188" ph="{...}" />
-            <marker date="1534586134521" expanded="false" signature="8789:8887" ph="hit(begin, end, value) → {" />
-            <marker date="1534586134521" expanded="false" signature="9105:9128" ph="}" />
-            <marker date="1534586134521" expanded="true" signature="9282:9784" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="9885:12135" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="12233:12835" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="12876:15627" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="15668:15857" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="15913:16239" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="16353:16429" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="16485:16691" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="16754:16826" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="16883:16994" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="17052:17164" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="17229:17348" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="17408:17486" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="17553:17713" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="17780:17901" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="17966:18085" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="18135:18200" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="18269:18353" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="18420:18734" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="18792:18995" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="19055:19132" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="19170:19756" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="19375:19538" ph="{...}" />
-            <marker date="1534586134521" expanded="true" signature="19566:19750" ph="{...}" />
-          </folding>
+        <state relative-caret-position="21006">
+          <caret line="1167" column="98" lean-forward="false" selection-start-line="1167" selection-start-column="98" selection-end-line="1167" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/pinyin_similar_phrase.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133884">
+          <caret line="7438" column="17" lean-forward="false" selection-start-line="7438" selection-start-column="17" selection-end-line="7438" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="36" lean-forward="false" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="38" lean-forward="true" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestWordSimilar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/hankcs/hanlp/portable-1.6.2/hanlp-portable-1.6.2.jar!/com/hankcs/hanlp/collection/trie/DoubleArrayTrie.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="659" column="58" lean-forward="false" selection-start-line="659" selection-start-column="58" selection-end-line="659" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/data/SighanDataBean3.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/data/LMStatisticWordBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/PrepareSigHanDataDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestSentenceSegment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/LanguageModelManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="113" column="5" lean-forward="true" selection-start-line="65" selection-start-column="0" selection-end-line="113" selection-end-column="5" />
+          <folding>
+            <element signature="e#654#655#0" expanded="false" />
+            <element signature="e#687#688#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/pinyin_similar_word.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="355" column="39" lean-forward="true" selection-start-line="355" selection-start-column="39" selection-end-line="355" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/DataPrapareDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-630">
+          <caret line="16" column="54" lean-forward="false" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/data/SighanDataBean2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="170" column="5" lean-forward="true" selection-start-line="170" selection-start-column="5" selection-end-line="170" selection-end-column="5" />
+        <state relative-caret-position="308">
+          <caret line="226" column="39" lean-forward="false" selection-start-line="226" selection-start-column="39" selection-end-line="226" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestLanguageModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="18" column="49" lean-forward="false" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="66" column="42" lean-forward="false" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/hankcs/hanlp/portable-1.6.2/hanlp-portable-1.6.2.jar!/com/hankcs/hanlp/seg/Segment.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="420" column="31" lean-forward="false" selection-start-line="420" selection-start-column="20" selection-end-line="420" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/Character.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="959" column="51" lean-forward="false" selection-start-line="959" selection-start-column="51" selection-end-line="959" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/hankcs/hanlp/portable-1.6.2/hanlp-portable-1.6.2.jar!/com/hankcs/hanlp/seg/Viterbi/ViterbiSegment.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-784">
+          <caret line="73" column="45" lean-forward="false" selection-start-line="73" selection-start-column="45" selection-end-line="73" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/hankcs/hanlp/portable-1.6.2/hanlp-portable-1.6.2.jar!/com/hankcs/hanlp/HanLP.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="162" column="33" lean-forward="false" selection-start-line="162" selection-start-column="19" selection-end-line="162" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/hankcs/hanlp/portable-1.6.2/hanlp-portable-1.6.2.jar!/com/hankcs/hanlp/tokenizer/StandardTokenizer.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="13" column="52" lean-forward="false" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/util/NLPUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="18" lean-forward="true" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/TrieLMTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/lang/String.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="215" column="0" lean-forward="false" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/sighan_train_2015.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21006">
+          <caret line="1167" column="98" lean-forward="false" selection-start-line="1167" selection-start-column="98" selection-end-line="1167" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/pinyin_similar_phrase2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" column="40" lean-forward="false" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resource/pinyin_similar_phrase.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-684492">
+          <caret line="7424" column="63" lean-forward="true" selection-start-line="7424" selection-start-column="63" selection-end-line="7424" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/WordSimilarCalculator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/driver/TestDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/method/BasicMethod3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="32" column="28" lean-forward="false" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/CandidatgeGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="276" column="0" lean-forward="false" selection-start-line="276" selection-start-column="0" selection-end-line="276" selection-end-column="0" />
           <folding>
-            <element signature="e#944#945#0" expanded="true" />
-            <element signature="e#1000#1001#0" expanded="true" />
-            <element signature="e#1267#1268#0" expanded="true" />
-            <element signature="e#1304#1305#0" expanded="true" />
-            <element signature="e#1426#1427#0" expanded="true" />
-            <element signature="e#1464#1465#0" expanded="true" />
-            <element signature="e#1524#1525#0" expanded="true" />
-            <element signature="e#1576#1577#0" expanded="true" />
-            <element signature="e#1810#1811#0" expanded="true" />
-            <element signature="e#1857#1858#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="method#calPMIInThreeWin#0;class#CandidatgeGenerator#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/pr/nlp/manager/LanguageModelManager2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>

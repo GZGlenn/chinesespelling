@@ -12,6 +12,8 @@ import java.util.List;
 public class LanguageModelManager2 {
 
     private final static Float DEFAULTMIN = Float.valueOf("-10");
+
+    private final static String staticUnigramName = "_1gram_clean.count";
     private final static String lmModelPath = "_cn_clean2.lm";
 //    private final static String CONNECTMODE = "_";
 
@@ -58,7 +60,12 @@ public class LanguageModelManager2 {
 
         String lmModelAbPath = mlRootPath + time + lmModelPath;
         loadLMModel(lmModelAbPath);
+
+        String unigramModelAbPath = mlRootPath + time + staticUnigramName;
+        loadUnigram(unigramModelAbPath);
+
     }
+
 
     private void loadLMModel(String path) {
         FileReader fileReader = null;
@@ -74,9 +81,9 @@ public class LanguageModelManager2 {
 
                     // unigram
                     if (info.length == 3) {
-                        String word = info[1];
-                        float score = Float.valueOf(info[0]);
-                        unigram.put(word, score);
+//                        String word = info[1];
+//                        float score = Float.valueOf(info[0]);
+//                        unigram.put(word, score);
 //                        System.out.println("load lmmodel : " + word + "\t" + score + "\t" + ++index);
                     }
                     else {
@@ -114,9 +121,58 @@ public class LanguageModelManager2 {
                 }
             }
 
-            System.out.println("unigram count : " + unigram.size());
             System.out.println("lm count : " + lmModel.size());
         }
+
+    }
+
+    private void loadUnigram(String path) {
+        float total = 0;
+        FileReader fileReader = null;
+        BufferedReader bufferedReader = null;
+        try {
+            fileReader = new FileReader(path);
+            bufferedReader = new BufferedReader(fileReader);
+            String line = null;
+            int index = 0;
+            while((line = bufferedReader.readLine()) != null) {
+                try {
+                    String[] info = line.split("\t");
+                    String word = info[0].trim();
+                    if (!lmModel.containsKey(word)) continue;
+                    float num = Float.valueOf(info[1].trim());
+                    unigram.put(word, num);
+                    total += num;
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    continue;
+                }
+            }
+        } catch(Exception e) {
+            System.out.println("create statistic info error : " + e.getMessage());
+        } finally {
+            if (bufferedReader != null) {
+                try {
+                    bufferedReader.close();
+                } catch (Exception e) {
+                    LogUtil.getInstance().printLog(e.getMessage(), LogUtil.LEVEL.ERROR);
+                }
+            }
+            if (fileReader != null)  {
+                try {
+                    fileReader.close();
+                } catch (Exception e) {
+                    LogUtil.getInstance().printLog(e.getMessage(), LogUtil.LEVEL.ERROR);
+                }
+            }
+        }
+
+        for (HashMap.Entry<String, Float> entry : unigram.entrySet()) {
+            entry.setValue(Float.valueOf("" + Math.log10(entry.getValue().doubleValue() / total)));
+        }
+
+        System.out.println("unigram count : " + unigram.size());
 
     }
 
@@ -139,10 +195,11 @@ public class LanguageModelManager2 {
     }
 
     public float calLM(List<Term> termList) {
-        if (termList.size() == 0) return  0;
+        if (termList.size() == 0) return DEFAULTMIN;
         else {
             int index = 0;
-            while (termList.get(index).nature.startsWith("w")) index++;
+            while (index < termList.size() && termList.get(index).nature.startsWith("w")) index++;
+            if (index >= termList.size()) return DEFAULTMIN;
             float lmFeat = unigram.getOrDefault(termList.get(index).word, DEFAULTMIN);
             for (int i = index + 1; i < termList.size(); i++) {
                 String firstWord = termList.get(i - 1).word;
@@ -162,7 +219,7 @@ public class LanguageModelManager2 {
     }
 
     public boolean isContain(String word) {
-        return unigram.containsKey(word) || lmModel.containsKey(word);
+        return unigram.containsKey(word);
     }
 
     public float getUnigram(String word) {

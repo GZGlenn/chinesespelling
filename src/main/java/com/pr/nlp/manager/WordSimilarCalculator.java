@@ -87,7 +87,9 @@ public class WordSimilarCalculator {
             }
             String[] words = spInfo[1].split(",");
             for (int i = 1; i < words.length; i++) {
-                pinyinPhraseTreeMap.get(spInfo[0]).add(words[i]);
+                if (spInfo[0].length() == words[i].length()) {
+                    pinyinPhraseTreeMap.get(spInfo[0]).add(words[i]);
+                }
             }
         }
         pinyinPhraseSimialrWordList.build(pinyinPhraseTreeMap);
@@ -115,7 +117,8 @@ public class WordSimilarCalculator {
 //        result.addAll(getShapeSimilarWord(word, wordnum));
 
         for (String py : pinyinList) {
-            result.addAll(pinyinWordSimialrWordList.get(py));
+            List<String> searchResult = pinyinWordSimialrWordList.get(py);
+            if (searchResult != null && !searchResult.isEmpty()) result.addAll(searchResult);
         }
         return result;
     }
@@ -127,7 +130,8 @@ public class WordSimilarCalculator {
 //        result.addAll(getShapeSimilarWord(word, wordnum));
 
         for (String py : pinyinList) {
-            result.addAll(pinyinPhraseSimialrWordList.get(py));
+            List<String> searchResult = pinyinPhraseSimialrWordList.get(py);
+            if (searchResult != null && !searchResult.isEmpty()) result.addAll(searchResult);
         }
         return result;
     }
